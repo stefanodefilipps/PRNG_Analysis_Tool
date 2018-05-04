@@ -7,6 +7,9 @@
 #include "swrite.h"
 #include "tables.h"
 #include "sres.h"
+#include "fmass.h"
+#include "statcoll.h"
+#include "gofw.h"
 
 static void ShowUsage(char *progPath);
 
@@ -41,19 +44,35 @@ int main(int argc, char *argv[]){
     	unif01_Gen *gen;
     	if(strcmp(argv[2],"lcg") == 0){		// controllo che voglio analizzare LCG
 			gen = ulcg_CreateLCG(2147483647, 16807, 0, 12345);
+			long y = 20000;
+			long u = 1;
 			if(strcmp(argv[3],"-a") == 0){
 				bbattery_FIPS_140_2(gen);
 			}
 			else{
 				if(strcmp(argv[3],"-s") == 0){
 					if(strcmp(argv[4],"monobit") == 0){			//eseguo solo il test monobit
-						long y = 20000;
-						long u = 1;
 						sstring_HammingWeight2(gen,NULL,u,y,0,32,y);
 					}
-				}
-				else{
-					ShowUsage(argv[0]);
+					else{
+						if(strcmp(argv[4],"poker") == 0){		// eseguo solo il poker test
+							smultin_MultinomialBits(gen,NULL,NULL,1,5000,0,32,4,FALSE);
+						}
+						else{
+							if(strcmp(argv[4],"run") == 0){		// eseguo solo il run test
+								sstring_Run(gen,NULL,1,y,0,32);
+							}
+							else{
+								if(strcmp(argv[4],"longRun") == 0){		// eseguo solo il longrun test
+									long f = 1500;
+									sstring_LongestHeadRun(gen,NULL,u,y,0,32,f);
+								}
+								else{
+									ShowUsage(argv[0]);
+								}
+							}
+						}
+					}
 				}
 			}
 			ulcg_DeleteGen(gen);
@@ -69,4 +88,7 @@ static void ShowUsage(char *progPath)
     printf("   options:\n");
     printf("   <-p> <lcg> <-a>: Execute all BSI tests on the PNRG LCG.\n");
     printf("   <-p> <lcg> <-s> <monobit>: Execute monobit test on the PNRG LCG.\n");
+    printf("   <-p> <lcg> <-s> <poker>: Execute poker test on the PNRG LCG.\n");
+    printf("   <-p> <lcg> <-s> <run>: Execute run test on the PNRG LCG.\n");
+    printf("   <-p> <lcg> <-s> <longRun>: Execute longrun test on the PNRG LCG.\n");
 }
