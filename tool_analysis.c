@@ -22,7 +22,7 @@
 
 static void ShowUsage(char *progPath);
 static int delete_Huffman_header(char* path);
-static char* Compress_Name(char* name,int header);
+static char* Compress_Name(char* name,int header,char* alg);
 static int all_or_single(char* param);
 static off_t FileDimension(int file);
 
@@ -35,9 +35,9 @@ si devono aggiungere i seguenti parametri:
 	-ltestu01 -lprobdist -lmylib -lm
 altrimenti non riesce a trovare i riferimenti ai file header
 Devo anche impostare le variabili di ambiente ogni volta che viene riaccesa la macchina
-	export LD_LIBRARY_PATH=<install directory>/lib
-    export LIBRARY_PATH=<install directory>/lib
-    export C_INCLUDE_PATH=<install directory>/include
+	export LD_LIBRARY_PATH=/home/biar/Desktop/PNRG_analisi/lib
+    export LIBRARY_PATH=/home/biar/Desktop/PNRG_analisi/lib
+    export C_INCLUDE_PATH=/home/biar/Desktop/PNRG_analisi/include
 
 
 
@@ -117,8 +117,22 @@ int main(int argc, char *argv[]){
             	program_arguments[3]=argv[all_or_single(argv[3])];
         	}
         	else{
-        		ShowUsage(argv[0]);
-        		return 0;
+        		if(strcmp(argv[2],"LZW") == 0){
+        			program_name = "/home/biar/Desktop/PNRG_analisi/LZW";
+            		program_arguments[0]="/home/biar/Desktop/PNRG_analisi/LZW";
+            		program_arguments[1]="-c";
+            		program_arguments[2]="-i";
+            		program_arguments[3]=argv[all_or_single(argv[3])];
+        		}
+        		else{
+        			if(strcmp(argv[2],"bzip2") == 0){
+        				program_name = "/bin/bzip2";
+             			program_arguments[0]="bzip2";
+             			program_arguments[1]="-k";
+             			program_arguments[2]="-f";
+             			program_arguments[3]=argv[all_or_single(argv[3])];
+        			}
+        		}
         	}
 
         	int res = execv(program_name,program_arguments);			//lancio l'algoritmo di compressione dati e creo il file compresso nella stella cartella dove si trova tool_analysis
@@ -133,19 +147,19 @@ int main(int argc, char *argv[]){
         	printf("errore wait");
         	exit(1);
     	}
-    	if(strcmp(argv[2],"Huffman")==0){
-    		char* temp = Compress_Name(argv[all_or_single(argv[3])],0);	// mi sono creato il path al file codificato appena creato da passare alla funzione successiva
-    		delete_Huffman_header(temp);
-    		temp = Compress_Name(argv[all_or_single(argv[3])],1);
+    		char* temp = Compress_Name(argv[all_or_single(argv[3])],0,argv[2]);	// mi sono creato il path al file codificato appena creato da passare alla funzione successiva
+    		if(strcmp(argv[2],"Huffman")==0){
+    			delete_Huffman_header(temp);
+    			temp = Compress_Name(argv[all_or_single(argv[3])],1,argv[2]);
+    		}
     		printf("%s\n", temp);
     		gen = ufile_CreateReadBin(temp,1);
-    	}
     
     }
 
     if(strcmp(argv[2],"lcg") == 0 || strcmp(argv[2],"mersenne_t") == 0) y = 20000;
     else{
-    	char* temp = Compress_Name(argv[all_or_single(argv[3])],1);
+    	char* temp = Compress_Name(argv[all_or_single(argv[3])],1,argv[2]);
 		y = FileDimension(open(temp,O_RDONLY));
     }
 
@@ -208,7 +222,7 @@ static void ShowUsage(char *progPath)
     printf("   <-c> <alg> <-s> <poker> <path_file>: Execute poker test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <run> <path_file>: Execute run test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <longRun> <path_file>: Execute longrun test on a compression algorithm.\n\n");
-    printf("   acceptable algorithms:\n\n    Huffman.\n");
+    printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n     bzip2");
 }
 
 static int delete_Huffman_header(char* path){				// questa funzione serve per eliminare le informazione di header dell'Huffman Tree così da avere solo dati compressi da poter testare
@@ -276,7 +290,7 @@ static int delete_Huffman_header(char* path){				// questa funzione serve per el
     return status;
 }
 
-static char* Compress_Name(char* name,int header){
+static char* Compress_Name(char* name,int header,char* alg){
 	char* temp = (char*)malloc(sizeof(char)*strlen(name)+50);
     int u=0;
     char m = name[u];
@@ -286,11 +300,18 @@ static char* Compress_Name(char* name,int header){
         m = name[u];
     }
     temp[u]='\0';
-    if(header == 0){
+    if(header == 0 && strcmp(alg,"Huffman") == 0){
     	strcat(temp,".HUFF");
     }
-    else{
+    if(header == 1 && strcmp(alg,"Huffman") == 0){
     	strcat(temp,"headerLess.HUFF");
+    }
+    if(strcmp(alg,"LZW") == 0){
+    	strcat(temp,".LZW");
+    }
+    if(strcmp(alg,"bzip2") == 0){
+    	strcpy(temp,name);
+    	strcat(temp,".bz2");
     }
     return temp;
 }
