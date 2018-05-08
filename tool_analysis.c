@@ -185,7 +185,12 @@ int main(int argc, char *argv[]){
 							sstring_LongestHeadRun(gen,NULL,u,y,0,32,f);
 						}
 						else{
-							ShowUsage(argv[0]);
+							if(strcmp(argv[4],"autoC") == 0){
+								sstring_AutoCor(gen,NULL,1,y,0,32,1000);
+							}
+							else{
+								ShowUsage(argv[0]);
+							}
 						}
 					}
 				}
@@ -215,13 +220,15 @@ static void ShowUsage(char *progPath)
     printf("   <-p> <alg> <-s> <monobit>: Execute monobit test on a PNRG.\n");
     printf("   <-p> <alg> <-s> <poker>: Execute poker test on a PNRG.\n");
     printf("   <-p> <alg> <-s> <run>: Execute run test on a PNRG.\n");
-    printf("   <-p> <alg> <-s> <longRun>: Execute longrun test on a PNRG.\n\n");
+    printf("   <-p> <alg> <-s> <longRun>: Execute longrun test on a PNRG.\n");
+    printf("   <-p> <alg> <-s> <autoC>: Execute auto correlation test on a PNRG.\n\n");
     printf("   acceptable PNRG:\n\n    lcg.\n    mersenne_t.\n\n");
     printf("   <-c> <alg> <-a> <path_file>: Execute all BSI tests on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <monobit> <path_file>: Execute monobit test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <poker> <path_file>: Execute poker test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <run> <path_file>: Execute run test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <longRun> <path_file>: Execute longrun test on a compression algorithm.\n\n");
+    printf("   <-c> <alg> <-s> <longRun> <path_file>: Execute longrun test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <autoC>: Execute auto correlation test on a compression algorithm.\n\n");
     printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n     bzip2");
 }
 
