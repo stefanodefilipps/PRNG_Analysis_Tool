@@ -19,11 +19,13 @@
 #include "bitarray.h"
 #include "bitfile.h"
 #include "ufile.h"
+#include "sstring.h"
+#include "smultin.h"
 
 static void ShowUsage(char *progPath);
 static int delete_Huffman_header(char* path);
-static char* Compress_Name(char* name,int header,char* alg);
-static int all_or_single(char* param);
+static char* Compress_Name(char* name,int header,char* alg,int vel);
+static int all_or_single(char* param,int arg);
 static off_t FileDimension(int file);
 
 typedef unsigned int count_t;
@@ -81,6 +83,10 @@ int main(int argc, char *argv[]){
     long y = 20000;
 	long u = 1;				// Da definire come costanti
 	long s = 12345;
+	int vel = 0;
+    if(argc == 6 && strcmp(argv[3],"-a") == 0 ) vel = atoi(argv[4]+1);
+    if(argc == 7) vel = atoi(argv[5]+1);
+	
 
     if(strcmp(argv[1],"-p") == 0){	// sono nel caso in cui voglio testare un singolo PNRG
     	swrite_Basic = TRUE;
@@ -108,29 +114,64 @@ int main(int argc, char *argv[]){
      	if(pid == 0){
     		char* program_name;
         	char* program_arguments[5];
-        	program_arguments[4]=NULL;
+        	program_arguments[4] = program_arguments[5] = NULL;
         	if(strcmp(argv[2],"Huffman")==0){
         		program_name = "/home/biar/Desktop/PNRG_analisi/HUFFMAN";
             	program_arguments[0]="/home/biar/Desktop/PNRG_analisi/HUFFMAN";
             	program_arguments[1]="-c";
             	program_arguments[2]="-i";
-            	program_arguments[3]=argv[all_or_single(argv[3])];
+            	program_arguments[3]=argv[all_or_single(argv[3],argc)];
         	}
         	else{
         		if(strcmp(argv[2],"LZW") == 0){
-        			program_name = "/home/biar/Desktop/PNRG_analisi/LZW";
+        			if(argc == 7){
+        				if(strcmp(argv[5],"-9") == 0){
+        					program_name = "/home/biar/Desktop/PNRG_analisi/LZW_4_9_bit/LZW";
+        				}
+        				else program_name = "/home/biar/Desktop/PNRG_analisi/LZW_15_bit/LZW";
+        			}
+        			else{
+        				if(argc == 6 && strcmp(argv[3],"-a") == 0){
+        				if(strcmp(argv[4],"-9") == 0){
+        					program_name = "/home/biar/Desktop/PNRG_analisi/LZW_4_9_bit/LZW";
+        				}
+        				else program_name = "/home/biar/Desktop/PNRG_analisi/LZW_15_bit/LZW";
+        				}
+        				else program_name = "/home/biar/Desktop/PNRG_analisi/LZW";	
+        			}
             		program_arguments[0]="/home/biar/Desktop/PNRG_analisi/LZW";
             		program_arguments[1]="-c";
             		program_arguments[2]="-i";
-            		program_arguments[3]=argv[all_or_single(argv[3])];
+            		program_arguments[3]=argv[all_or_single(argv[3],argc)];
         		}
         		else{
         			if(strcmp(argv[2],"bzip2") == 0){
+
         				program_name = "/bin/bzip2";
              			program_arguments[0]="bzip2";
              			program_arguments[1]="-k";
              			program_arguments[2]="-f";
-             			program_arguments[3]=argv[all_or_single(argv[3])];
+             			if(argc == 6){
+             				program_arguments[3]=argv[all_or_single(argv[3],argc)];
+             			}
+             			else{
+             				if(argc == 6 && strcmp(argv[3],"-a") == 0 ){
+             					int vel = atoi(argv[4]+1);				// +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+             					if(vel == 0 || vel < 1 || vel > 9){
+             					ShowUsage(argv[0]);
+             					return 0;
+             					}
+             				}
+             				else{
+             					int vel = atoi(argv[5]+1);				// +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+             					if(vel == 0 || vel < 1 || vel > 9){
+             					ShowUsage(argv[0]);
+             					return 0;
+             					}
+             				}
+             				program_arguments[3]=argv[5];
+             				program_arguments[4]=argv[all_or_single(argv[3],argc)];
+             			}
         			}
         		}
         	}
@@ -147,10 +188,10 @@ int main(int argc, char *argv[]){
         	printf("errore wait");
         	exit(1);
     	}
-    		char* temp = Compress_Name(argv[all_or_single(argv[3])],0,argv[2]);	// mi sono creato il path al file codificato appena creato da passare alla funzione successiva
+    		char* temp = Compress_Name(argv[all_or_single(argv[3],argc)],0,argv[2],vel);	// mi sono creato il path al file codificato appena creato da passare alla funzione successiva
     		if(strcmp(argv[2],"Huffman")==0){
     			delete_Huffman_header(temp);
-    			temp = Compress_Name(argv[all_or_single(argv[3])],1,argv[2]);
+    			temp = Compress_Name(argv[all_or_single(argv[3],argc)],1,argv[2],vel);
     		}
     		printf("%s\n", temp);
     		gen = ufile_CreateReadBin(temp,1);
@@ -159,7 +200,7 @@ int main(int argc, char *argv[]){
 
     if(strcmp(argv[2],"lcg") == 0 || strcmp(argv[2],"mersenne_t") == 0) y = 20000;
     else{
-    	char* temp = Compress_Name(argv[all_or_single(argv[3])],1,argv[2]);
+    	char* temp = Compress_Name(argv[all_or_single(argv[3],argc)],1,argv[2],vel);
 		y = FileDimension(open(temp,O_RDONLY));
     }
 
@@ -169,20 +210,32 @@ int main(int argc, char *argv[]){
 	else{
 		if(strcmp(argv[3],"-s") == 0){
 			if(strcmp(argv[4],"monobit") == 0){			//eseguo solo il test monobit
-				sstring_HammingWeight2(gen,NULL,u,y,0,32,y);
+				sres_Basic * res = sres_CreateBasic();
+				sstring_HammingWeight2(gen,res,u,y,0,32,y);
+				printf("STATISTIC VALUE %lf \n", res->sVal2[gofw_Mean] );
+				printf("P VALUE %lf \n", res->pVal2[gofw_Mean] );
 			}
 			else{
 				if(strcmp(argv[4],"poker") == 0){		// eseguo solo il poker test
-					smultin_MultinomialBits(gen,NULL,NULL,1,5000,0,32,4,FALSE);
+					smultin_Res* res = smultin_CreateRes(NULL);
+					smultin_MultinomialBits(gen,NULL,res,1,5000,0,32,4,FALSE);
+					printf("STATISTIC VALUE %lf \n", res->sVal2[1][gofw_Mean]);
+					printf("P VALUE %lf \n", res->pVal2[1][gofw_Mean]);
 				}
 				else{
 					if(strcmp(argv[4],"run") == 0){		// eseguo solo il run test
-						sstring_Run(gen,NULL,1,y,0,32);
+						sstring_Res3* res = sstring_CreateRes3();
+						sstring_Run(gen,res,1,y,0,32);
+						printf("STATISTIC VALUE %lf \n", res->NRuns->sVal2[gofw_Mean] );
+						printf("P VALUE %lf \n", res->NRuns->pVal2[gofw_Mean] );
 					}
 					else{
 						if(strcmp(argv[4],"longRun") == 0){		// eseguo solo il longrun test
 							long f = 1500;
-							sstring_LongestHeadRun(gen,NULL,u,y,0,32,f);
+							sstring_Res2* res  = sstring_CreateRes2();
+							sstring_LongestHeadRun(gen,res,u,y,0,32,f);
+							printf("STATISTIC VALUE %lf \n", res->Chi->sVal2[gofw_Mean] );
+							printf("P VALUE %lf \n", res->Chi->pVal2[gofw_Mean] );
 						}
 						else{
 							if(strcmp(argv[4],"autoC") == 0){
@@ -223,13 +276,14 @@ static void ShowUsage(char *progPath)
     printf("   <-p> <alg> <-s> <longRun>: Execute longrun test on a PNRG.\n");
     printf("   <-p> <alg> <-s> <autoC>: Execute auto correlation test on a PNRG.\n\n");
     printf("   acceptable PNRG:\n\n    lcg.\n    mersenne_t.\n\n");
-    printf("   <-c> <alg> <-a> <path_file>: Execute all BSI tests on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <monobit> <path_file>: Execute monobit test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <poker> <path_file>: Execute poker test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <run> <path_file>: Execute run test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <longRun> <path_file>: Execute longrun test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <autoC>: Execute auto correlation test on a compression algorithm.\n\n");
-    printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n     bzip2");
+    printf("   <-c> <alg> <-a> <-vel*> <path_file>: Execute all BSI tests on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <monobit> <-vel*> <path_file>: Execute monobit test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <poker> <-vel*> <path_file>: Execute poker test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <run> <-vel*> <path_file>: Execute run test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <longRun> <-vel*> <path_file>: Execute longrun test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <autoC> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n\n");
+    printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n    bzip2\n\n");
+    printf("   <-vel> parameter is optional and it can assume values:\n\n in range [1,9] if the compressione algorithm is bzip2.\n 9 or 15 if the compression algorithm is LZW");
 }
 
 static int delete_Huffman_header(char* path){				// questa funzione serve per eliminare le informazione di header dell'Huffman Tree così da avere solo dati compressi da poter testare
@@ -297,7 +351,7 @@ static int delete_Huffman_header(char* path){				// questa funzione serve per el
     return status;
 }
 
-static char* Compress_Name(char* name,int header,char* alg){
+static char* Compress_Name(char* name,int header,char* alg,int vel){
 	char* temp = (char*)malloc(sizeof(char)*strlen(name)+50);
     int u=0;
     char m = name[u];
@@ -314,7 +368,9 @@ static char* Compress_Name(char* name,int header,char* alg){
     	strcat(temp,"headerLess.HUFF");
     }
     if(strcmp(alg,"LZW") == 0){
-    	strcat(temp,".LZW");
+    	if(vel == 9)strcat(temp,".LZW9");
+    	if(vel == 15)strcat(temp,".LZW5");
+    	if(vel == 0) strcat(temp,".LZW");
     }
     if(strcmp(alg,"bzip2") == 0){
     	strcpy(temp,name);
@@ -323,7 +379,12 @@ static char* Compress_Name(char* name,int header,char* alg){
     return temp;
 }
 
-static int all_or_single(char* param){
+static int all_or_single(char* param,int arg){
+	if(arg == 7){
+		if(strcmp(param,"-a") == 0) return 5;
+		return 6;
+	}
+	if(arg == 6 && strcmp(param,"-a") == 0 ) return 5;
 	if(strcmp(param,"-a") == 0) return 4;
 	return 5;
 }
