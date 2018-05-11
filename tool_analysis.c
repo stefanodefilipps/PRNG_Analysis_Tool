@@ -239,7 +239,10 @@ int main(int argc, char *argv[]){
 						}
 						else{
 							if(strcmp(argv[4],"autoC") == 0){
-								sstring_AutoCor(gen,NULL,1,y,0,32,1000);
+								sres_Basic * res = sres_CreateBasic();
+								sstring_AutoCor(gen,res,1,y,0,32,1000);
+								printf("STATISTIC VALUE %lf \n", res->sVal2[gofw_Mean] );
+								printf("P VALUE %lf \n", res->pVal2[gofw_Mean] );
 							}
 							else{
 								ShowUsage(argv[0]);
