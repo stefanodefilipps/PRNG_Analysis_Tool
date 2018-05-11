@@ -6,6 +6,7 @@
 #include <sys/types.h> 
 #include <sys/stat.h> 
 #include <fcntl.h>
+
 #include "unif01.h"
 #include "ulcg.h"
 #include "gdef.h"
@@ -37,9 +38,10 @@ si devono aggiungere i seguenti parametri:
 	-ltestu01 -lprobdist -lmylib -lm
 altrimenti non riesce a trovare i riferimenti ai file header
 Devo anche impostare le variabili di ambiente ogni volta che viene riaccesa la macchina
-	export LD_LIBRARY_PATH=/home/biar/Desktop/PNRG_analisi/lib
-    export LIBRARY_PATH=/home/biar/Desktop/PNRG_analisi/lib
-    export C_INCLUDE_PATH=/home/biar/Desktop/PNRG_analisi/include
+
+export LD_LIBRARY_PATH=/home/biar/Desktop/PNRG_analisi/lib
+export LIBRARY_PATH=/home/biar/Desktop/PNRG_analisi/lib
+export C_INCLUDE_PATH=/home/biar/Desktop/PNRG_analisi/include
 
 
 
@@ -173,6 +175,65 @@ int main(int argc, char *argv[]){
              				program_arguments[4]=argv[all_or_single(argv[3],argc)];
              			}
         			}
+        			else{
+        				if(strcmp(argv[2],"gzip") == 0){
+        					program_name = "/bin/gzip";
+             				program_arguments[0]="gzip";
+             				program_arguments[1]="-k";
+             				program_arguments[2]="-f";
+             				if(argc == 6){
+             					program_arguments[3]=argv[all_or_single(argv[3],argc)];
+             				}
+             				else{
+             					if(argc == 6 && strcmp(argv[3],"-a") == 0 ){
+             						int vel = atoi(argv[4]+1);				// +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+             						if(vel == 0 || vel < 1 || vel > 9){
+             						ShowUsage(argv[0]);
+             						return 0;
+             						}
+             					}
+             					else{
+             						int vel = atoi(argv[5]+1);				// +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+             						if(vel == 0 || vel < 1 || vel > 9){
+             						ShowUsage(argv[0]);
+             						return 0;
+             						}
+             					}
+             					program_arguments[3]=argv[5];
+             					program_arguments[4]=argv[all_or_single(argv[3],argc)];
+             				}	
+             			}
+             			else{
+             				if(strcmp(argv[2],"lzma") == 0){
+        						program_name = "/usr/bin/lzma";
+        						printf("%s\n", program_name);
+             					program_arguments[0]="lzma";
+             					program_arguments[1]="-k";
+             					program_arguments[2]="-f";
+             					if(argc == 6){
+             						program_arguments[3]=argv[all_or_single(argv[3],argc)];
+             					}
+             					else{
+             						if(argc == 6 && strcmp(argv[3],"-a") == 0 ){
+             							int vel = atoi(argv[4]+1);				// +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+             							if(vel == 0 || vel < 1 || vel > 9){
+             							ShowUsage(argv[0]);
+             							return 0;
+             							}
+             						}
+             						else{
+             							int vel = atoi(argv[5]+1);				// +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+             							if(vel == 0 || vel < 1 || vel > 9){
+             							ShowUsage(argv[0]);
+             							return 0;
+             							}
+             						}
+             						program_arguments[3]=argv[5];
+             						program_arguments[4]=argv[all_or_single(argv[3],argc)];
+             					}	
+             				}
+             			}
+        			}
         		}
         	}
 
@@ -285,8 +346,8 @@ static void ShowUsage(char *progPath)
     printf("   <-c> <alg> <-s> <run> <-vel*> <path_file>: Execute run test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <longRun> <-vel*> <path_file>: Execute longrun test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <autoC> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n\n");
-    printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n    bzip2\n\n");
-    printf("   <-vel> parameter is optional and it can assume values:\n\n in range [1,9] if the compressione algorithm is bzip2.\n 9 or 15 if the compression algorithm is LZW");
+    printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n    bzip2\n\n    gzip\n\n    lzma\n\n");
+    printf("   <-vel> parameter is optional and it can assume values:\n\n in range [1,9] if the compressione algorithm is bzip2,gzip,lzma.\n 9 or 15 if the compression algorithm is LZW\n\n");
 }
 
 static int delete_Huffman_header(char* path){				// questa funzione serve per eliminare le informazione di header dell'Huffman Tree così da avere solo dati compressi da poter testare
@@ -378,6 +439,14 @@ static char* Compress_Name(char* name,int header,char* alg,int vel){
     if(strcmp(alg,"bzip2") == 0){
     	strcpy(temp,name);
     	strcat(temp,".bz2");
+    }
+    if(strcmp(alg,"gzip") == 0){
+    	strcpy(temp,name);
+    	strcat(temp,".gz");
+    }
+    if(strcmp(alg,"lzma") == 0){
+    	strcpy(temp,name);
+    	strcat(temp,".lzma");
     }
     return temp;
 }
