@@ -28,6 +28,8 @@ static int delete_Huffman_header(char* path);
 static char* Compress_Name(char* name,int header,char* alg,int vel);
 static int all_or_single(char* param,int arg);
 static off_t FileDimension(int file);
+static char* ParseFileName(char *path);
+static void fprintfAlg(FILE* report, char** argv, int argc);
 
 typedef unsigned int count_t;
 
@@ -105,9 +107,19 @@ int main(int argc, char *argv[]){
 			}									// e quindi mi va in errore i vari test
 		}
     }
+    FILE* report=fopen("/home/biar/Desktop/PNRG_analisi/Report.txt","a");
+    if(report == NULL){
+        perror("errore nell'apertura del file di report");
+        exit(1);
+    }
+    if(argc == 6){
+        fprintf(report,"\n%s;",ParseFileName(argv[5]));
+    } 
+    else{
+        fprintf(report,"\n%s;",ParseFileName(argv[6]));
+    }
 
-
-    if(strcmp(argv[1],"-c") == 0){			// Devo testare un algoritmo di compressione dati
+    if(strcmp(argv[1],"-c") == 0){                       			// Devo testare un algoritmo di compressione dati
     	pid_t pid = fork();					// Creo un processo figlio perchè poi dovrò lanciare con execv l'algoritmo di Huffman
      	if(pid == -1){
          printf("Errore fork");
@@ -115,7 +127,7 @@ int main(int argc, char *argv[]){
      	}
      	if(pid == 0){
     		char* program_name;
-        	char* program_arguments[5];
+        	char* program_arguments[7];
         	program_arguments[4] = program_arguments[5] = NULL;
         	if(strcmp(argv[2],"Huffman")==0){
         		program_name = "/home/biar/Desktop/PNRG_analisi/HUFFMAN";
@@ -130,16 +142,23 @@ int main(int argc, char *argv[]){
         				if(strcmp(argv[5],"-9") == 0){
         					program_name = "/home/biar/Desktop/PNRG_analisi/LZW_4_9_bit/LZW";
         				}
-        				else program_name = "/home/biar/Desktop/PNRG_analisi/LZW_15_bit/LZW";
+        				else {
+                            program_name = "/home/biar/Desktop/PNRG_analisi/LZW_15_bit/LZW";
+                        }
+
         			}
         			else{
         				if(argc == 6 && strcmp(argv[3],"-a") == 0){
         				if(strcmp(argv[4],"-9") == 0){
         					program_name = "/home/biar/Desktop/PNRG_analisi/LZW_4_9_bit/LZW";
         				}
-        				else program_name = "/home/biar/Desktop/PNRG_analisi/LZW_15_bit/LZW";
+        				else {
+                            program_name = "/home/biar/Desktop/PNRG_analisi/LZW_15_bit/LZW";
+                        }
         				}
-        				else program_name = "/home/biar/Desktop/PNRG_analisi/LZW";	
+        				else {
+                            program_name = "/home/biar/Desktop/PNRG_analisi/LZW";
+                            }	
         			}
             		program_arguments[0]="/home/biar/Desktop/PNRG_analisi/LZW";
             		program_arguments[1]="-c";
@@ -148,7 +167,6 @@ int main(int argc, char *argv[]){
         		}
         		else{
         			if(strcmp(argv[2],"bzip2") == 0){
-
         				program_name = "/bin/bzip2";
              			program_arguments[0]="bzip2";
              			program_arguments[1]="-k";
@@ -232,6 +250,17 @@ int main(int argc, char *argv[]){
              						program_arguments[4]=argv[all_or_single(argv[3],argc)];
              					}	
              				}
+             				else{
+             					if(strcmp(argv[2],"Aritmetic")==0){
+        							program_name = "/home/biar/Desktop/PNRG_analisi/ARITMETIC";
+            						program_arguments[0]="/home/biar/Desktop/PNRG_analisi/ARITMETIC";
+            						program_arguments[1]="-a";
+            						program_arguments[2]="-i";
+            						program_arguments[3]=argv[all_or_single(argv[3],argc)];
+            						program_arguments[4]="-o";
+            						program_arguments[5]= Compress_Name(argv[all_or_single(argv[3],argc)],0,argv[2],vel);
+        						}
+             				}
              			}
         			}
         		}
@@ -259,51 +288,82 @@ int main(int argc, char *argv[]){
     
     }
 
+    if(strcmp(argv[1],"-f") == 0){								// sto testando dei file che derivano da lossy algorithm quali jpeg o mp3 ecc
+    	gen = ufile_CreateReadBin(argv[2],1);	
+    	printf("%s\n", argv[2]);
+    }
+
     if(strcmp(argv[2],"lcg") == 0 || strcmp(argv[2],"mersenne_t") == 0) y = 20000;
     else{
-    	char* temp = Compress_Name(argv[all_or_single(argv[3],argc)],1,argv[2],vel);
-		y = FileDimension(open(temp,O_RDONLY));
+    	if(strcmp(argv[1],"-f") == 0){
+    		y = FileDimension(open(argv[2],O_RDONLY));	
+    	}
+    	else{
+    		char* temp = Compress_Name(argv[all_or_single(argv[3],argc)],1,argv[2],vel);
+			y = FileDimension(open(temp,O_RDONLY));
+    	}
     }
 
     if(strcmp(argv[3],"-a") == 0){
 		bbattery_FIPS_140_2(gen);
 	}
 	else{
+        fprintfAlg(report,argv,argc);
 		if(strcmp(argv[3],"-s") == 0){
 			if(strcmp(argv[4],"monobit") == 0){			//eseguo solo il test monobit
 				sres_Basic * res = sres_CreateBasic();
 				sstring_HammingWeight2(gen,res,u,y,0,32,y);
+                fflush(report);
+                fprintf(report,"monobit;");
 				printf("STATISTIC VALUE %lf \n", res->sVal2[gofw_Mean] );
 				printf("P VALUE %lf \n", res->pVal2[gofw_Mean] );
+                fflush(report);
+                fprintf(report,"%lf;%lf\n\n",res->sVal2[gofw_Mean],res->pVal2[gofw_Mean]);
 			}
 			else{
 				if(strcmp(argv[4],"poker") == 0){		// eseguo solo il poker test
+                    fflush(report);
+                    fprintf(report,"poker;");
 					smultin_Res* res = smultin_CreateRes(NULL);
 					smultin_MultinomialBits(gen,NULL,res,1,5000,0,32,4,FALSE);
 					printf("STATISTIC VALUE %lf \n", res->sVal2[1][gofw_Mean]);
 					printf("P VALUE %lf \n", res->pVal2[1][gofw_Mean]);
+                    fflush(report);
+                    fprintf(report,"%lf;%lf\n\n",res->sVal2[1][gofw_Mean],res->pVal2[1][gofw_Mean]);
 				}
 				else{
 					if(strcmp(argv[4],"run") == 0){		// eseguo solo il run test
+                        fflush(report);
+                        fprintf(report,"run;");
 						sstring_Res3* res = sstring_CreateRes3();
 						sstring_Run(gen,res,1,y,0,32);
 						printf("STATISTIC VALUE %lf \n", res->NRuns->sVal2[gofw_Mean] );
 						printf("P VALUE %lf \n", res->NRuns->pVal2[gofw_Mean] );
+                        fflush(report);
+                        fprintf(report,"%lf;%lf\n\n",res->NRuns->sVal2[gofw_Mean],res->NRuns->pVal2[gofw_Mean]);
 					}
 					else{
 						if(strcmp(argv[4],"longRun") == 0){		// eseguo solo il longrun test
+                            fflush(report);
+                            fprintf(report,"longRun;");
 							long f = 1500;
 							sstring_Res2* res  = sstring_CreateRes2();
 							sstring_LongestHeadRun(gen,res,u,y,0,32,f);
 							printf("STATISTIC VALUE %lf \n", res->Chi->sVal2[gofw_Mean] );
 							printf("P VALUE %lf \n", res->Chi->pVal2[gofw_Mean] );
+                            fflush(report);
+                            fprintf(report,"%lf;%lf\n\n",res->Chi->sVal2[gofw_Mean],res->Chi->pVal2[gofw_Mean]);
 						}
 						else{
 							if(strcmp(argv[4],"autoC") == 0){
+                                fflush(report);
+                                fprintf(report,"autoC;");
 								sres_Basic * res = sres_CreateBasic();
 								sstring_AutoCor(gen,res,1,y,0,32,1000);
 								printf("STATISTIC VALUE %lf \n", res->sVal2[gofw_Mean] );
 								printf("P VALUE %lf \n", res->pVal2[gofw_Mean] );
+                                fflush(report);
+                                fprintf(report,"%lf;%lf\n\n",res->sVal2[gofw_Mean],res->pVal2[gofw_Mean]);
 							}
 							else{
 								ShowUsage(argv[0]);
@@ -339,15 +399,16 @@ static void ShowUsage(char *progPath)
     printf("   <-p> <alg> <-s> <run>: Execute run test on a PNRG.\n");
     printf("   <-p> <alg> <-s> <longRun>: Execute longrun test on a PNRG.\n");
     printf("   <-p> <alg> <-s> <autoC>: Execute auto correlation test on a PNRG.\n\n");
-    printf("   acceptable PNRG:\n\n    lcg.\n    mersenne_t.\n\n");
+    printf("   acceptable PNRG:\n\n    lcg\n    mersenne_t\n\n");
     printf("   <-c> <alg> <-a> <-vel*> <path_file>: Execute all BSI tests on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <monobit> <-vel*> <path_file>: Execute monobit test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <poker> <-vel*> <path_file>: Execute poker test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <run> <-vel*> <path_file>: Execute run test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <longRun> <-vel*> <path_file>: Execute longrun test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <autoC> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n\n");
-    printf("   acceptable algorithms:\n\n    Huffman.\n\n    LZW\n\n    bzip2\n\n    gzip\n\n    lzma\n\n");
+    printf("   acceptable algorithms:\n\n    Huffman\n\n    LZW\n\n    Aritmetic\n\n    bzip2\n\n    gzip\n\n    lzma\n\n");
     printf("   <-vel> parameter is optional and it can assume values:\n\n in range [1,9] if the compressione algorithm is bzip2,gzip,lzma.\n 9 or 15 if the compression algorithm is LZW\n\n");
+    printf("   <-f> <pathfile> and same parameters above to test directly a file");
 }
 
 static int delete_Huffman_header(char* path){				// questa funzione serve per eliminare le informazione di header dell'Huffman Tree così da avere solo dati compressi da poter testare
@@ -448,6 +509,9 @@ static char* Compress_Name(char* name,int header,char* alg,int vel){
     	strcpy(temp,name);
     	strcat(temp,".lzma");
     }
+    if(strcmp(alg,"Aritmetic") == 0){
+    	strcat(temp,".ARIT");
+    }
     return temp;
 }
 
@@ -465,4 +529,118 @@ static off_t FileDimension(int file){
     struct stat buf;
     fstat(file,&buf);
     return buf.st_size;
+}
+
+static char* ParseFileName(char *path){
+    char* slash = strrchr(path,'/');
+    char* name = (char*)malloc(sizeof(char)*strlen(slash));
+    strcpy(name,slash+1);
+    return name;
+
+}
+
+static void fprintfAlg(FILE* report, char** argv, int argc){
+    if(strcmp(argv[2],"Huffman")==0){
+        fprintf(report,"Huffman;");
+    }
+    else{
+        if(strcmp(argv[2],"LZW") == 0){
+            if(argc == 7){
+                if(strcmp(argv[5],"-9") == 0){
+                    fprintf(report,"LZW -9;");
+                }
+                else {
+                    fprintf(report,"LZW -15;");
+                }
+
+            }
+            else{
+                if(argc == 6 && strcmp(argv[3],"-a") == 0){
+                if(strcmp(argv[4],"-9") == 0){
+                    fprintf(report,"LZW -9;");
+                }
+                else {
+                    fprintf(report,"LZW -15;");
+                }
+                }
+                else {
+                    fprintf(report,"LZW;");
+                    }   
+            }
+        }
+        else{
+            if(strcmp(argv[2],"bzip2") == 0){
+                if(argc == 6){
+                    fprintf(report,"bzip2;");
+                }
+                else{
+                    if(argc == 6 && strcmp(argv[3],"-a") == 0 ){
+                        int vel = atoi(argv[4]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+                        if(vel == 0 || vel < 1 || vel > 9){
+                        ShowUsage(argv[0]);
+                        }
+                        fprintf(report,"bzip2 %d;", vel);
+                    }
+                    else{
+                        int vel = atoi(argv[5]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+                        if(vel == 0 || vel < 1 || vel > 9){
+                        ShowUsage(argv[0]);
+                        }
+                        fprintf(report,"bzip2 %d;", vel);
+                    }
+                }
+            }
+            else{
+                if(strcmp(argv[2],"gzip") == 0){
+                    if(argc == 6){
+                        fprintf(report,"gzip;");
+                    }
+                    else{
+                        if(argc == 6 && strcmp(argv[3],"-a") == 0 ){
+                            int vel = atoi(argv[4]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+                            if(vel == 0 || vel < 1 || vel > 9){
+                            ShowUsage(argv[0]);
+                            }
+                            fprintf(report,"gzip %d;", vel);
+                        }
+                        else{
+                            int vel = atoi(argv[5]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+                            if(vel == 0 || vel < 1 || vel > 9){
+                            ShowUsage(argv[0]);
+                            }
+                            fprintf(report,"gzip %d;", vel);
+                        }
+                    }   
+                }
+                else{
+                    if(strcmp(argv[2],"lzma") == 0){
+                        if(argc == 6){
+                            fprintf(report,"lzma;");
+                        }
+                        else{
+                            if(argc == 6 && strcmp(argv[3],"-a") == 0 ){
+                                int vel = atoi(argv[4]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+                                if(vel == 0 || vel < 1 || vel > 9){
+                                ShowUsage(argv[0]);
+                                }
+                                fprintf(report,"gzip %d;", vel);
+                            }
+                            else{
+                                int vel = atoi(argv[5]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
+                                if(vel == 0 || vel < 1 || vel > 9){
+                                ShowUsage(argv[0]);
+                                }
+                                fprintf(report,"gzip %d;", vel);
+                            }
+                        }   
+                    }
+                    else{
+                        if(strcmp(argv[2],"Aritmetic")==0){
+                            fprintf(report,"Aritmetic;");
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
