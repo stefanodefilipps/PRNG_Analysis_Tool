@@ -22,6 +22,9 @@
 #include "ufile.h"
 #include "sstring.h"
 #include "smultin.h"
+#include "gofs.h"
+#include "sspectral.h"
+#include <math.h>
 
 static void ShowUsage(char *progPath);
 static int delete_Huffman_header(char* path);
@@ -30,6 +33,7 @@ static int all_or_single(char* param,int arg);
 static off_t FileDimension(int file);
 static char* ParseFileName(char *path);
 static void fprintfAlg(FILE* report, char** argv, int argc);
+static int my_log2(double x);
 
 typedef unsigned int count_t;
 
@@ -92,21 +96,6 @@ int main(int argc, char *argv[]){
     if(argc == 7) vel = atoi(argv[5]+1);
 	
 
-    if(strcmp(argv[1],"-p") == 0){	// sono nel caso in cui voglio testare un singolo PNRG
-    	swrite_Basic = TRUE;
-    	if(strcmp(argv[2],"lcg") == 0){		// controllo che voglio analizzare LCG
-			gen = ulcg_CreateLCG(2147483647, 16807, 0, s);
-		}
-		else{
-			if(strcmp(argv[2],"mersenne_t") == 0){
-				gen = ugfsr_CreateMT19937_98(s);
-			}
-			else{
-				ShowUsage(argv[0]);				// se in input mi è detto di aspettarmi un PNRG ma nessuno dei due possibili allora faccio vedere i possibili comandi 
-				return 0;						// e faccio return, altrimenti anche se faccio show usage poi vado a vedere terzo elemento di argv ma non ho gen
-			}									// e quindi mi va in errore i vari test
-		}
-    }
     FILE* report=fopen("/home/biar/Desktop/PNRG_analisi/Report.txt","a");
     if(report == NULL){
         perror("errore nell'apertura del file di report");
@@ -366,8 +355,50 @@ int main(int argc, char *argv[]){
                                 fprintf(report,"%lf;%lf\n\n",res->sVal2[gofw_Mean],res->pVal2[gofw_Mean]);
 							}
 							else{
-								ShowUsage(argv[0]);
-							}
+                                if(strcmp(argv[4],"Matrix") == 0){
+                                    fflush(report);
+                                    fprintf(report, "MatrixRank;");
+                                    sres_Chi2 * res = sres_CreateChi2();
+                                    int vero = 0;
+                                    if ((y/2) > gofs_MinExpected)
+                                    {
+                                        vero = 1;
+                                    }
+                                    printf("MINORE %d\n", vero);
+                                    printf("MINIMO:   %lf    %ld\n", gofs_MinExpected, y/2);
+                                    smarsa_MatrixRank(gen,res,1,y,0,32,32,32);
+                                    printf("STATISTIC VALUE %lf \n", res->sVal2[gofw_Mean] );
+                                    printf("P VALUE %lf \n", res->pVal2[gofw_Mean] );
+                                    fflush(report);
+                                    fprintf(report,"%lf;%lf\n\n",res->sVal2[gofw_Mean],res->pVal2[gofw_Mean]);
+                                }
+                                else{
+                                    if(strcmp(argv[4],"Fourier") == 0){
+                                        fflush(report);
+                                        fprintf(report, "Fourier;");
+                                        sspectral_Res * res = sspectral_CreateRes();
+                                        sspectral_Fourier1(gen,res,1,log2(((double)y)),0,32);
+                                        printf("STATISTIC VALUE %lf \n", res->Bas->sVal2[gofw_Mean] );
+                                        printf("P VALUE %lf \n", res->Bas->pVal2[gofw_Mean] );
+                                        fflush(report);
+                                        fprintf(report,"%lf;%lf\n\n",res->Bas->sVal2[gofw_Mean],res->Bas->pVal2[gofw_Mean]);
+                                    }
+                                    else{
+                                       if(strcmp(argv[4],"NOTemplateMatching") == 0){
+                                           fflush(report);
+                                           fprintf(report, "NOTemplateMatching;");
+                                           sres_Poisson * res = sres_CreatePoisson(); 
+                                           unsigned long key = 1;
+                                           smarsa_CATBits(gen,res,1,y,0,32,5,key);
+                                           printf("STATISTIC VALUE %lf \n", res->sVal2);
+                                           printf("P VALUE %lf \n", res->pVal2);
+                                           fflush(report);
+                                           fprintf(report,"%lf;%lf\n\n",res->sVal2,res->pVal2);
+                                       }
+                                       else ShowUsage(argv[0]); 
+                                    }
+                                } 
+                            }
 						}
 					}
 				}
@@ -393,23 +424,25 @@ static void ShowUsage(char *progPath)
 {
     printf("   Usage: %s <options>\n\n", progPath);
     printf("   options:\n");
-    printf("   <-p> <alg> <-a>: Execute all BSI tests on a PNRG .\n");
-    printf("   <-p> <alg> <-s> <monobit>: Execute monobit test on a PNRG.\n");
-    printf("   <-p> <alg> <-s> <poker>: Execute poker test on a PNRG.\n");
-    printf("   <-p> <alg> <-s> <run>: Execute run test on a PNRG.\n");
-    printf("   <-p> <alg> <-s> <longRun>: Execute longrun test on a PNRG.\n");
-    printf("   <-p> <alg> <-s> <autoC>: Execute auto correlation test on a PNRG.\n\n");
-    printf("   acceptable PNRG:\n\n    lcg\n    mersenne_t\n\n");
     printf("   <-c> <alg> <-a> <-vel*> <path_file>: Execute all BSI tests on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <monobit> <-vel*> <path_file>: Execute monobit test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <poker> <-vel*> <path_file>: Execute poker test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <run> <-vel*> <path_file>: Execute run test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <longRun> <-vel*> <path_file>: Execute longrun test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <autoC> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n\n");
+    printf("   <-c> <alg> <-s> <autoC> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <Matrix> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <Fourier> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <NOTemplateMatching> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
     printf("   acceptable algorithms:\n\n    Huffman\n\n    LZW\n\n    Aritmetic\n\n    bzip2\n\n    gzip\n\n    lzma\n\n");
     printf("   <-vel> parameter is optional and it can assume values:\n\n in range [1,9] if the compressione algorithm is bzip2,gzip,lzma.\n 9 or 15 if the compression algorithm is LZW\n\n");
     printf("   <-f> <pathfile> and same parameters above to test directly a file");
 }
+
+
+static int my_log2(double x) { 
+    return (int)(floor((log(x) / log(2)))); 
+} 
+
 
 static int delete_Huffman_header(char* path){				// questa funzione serve per eliminare le informazione di header dell'Huffman Tree così da avere solo dati compressi da poter testare
 	FILE *inFile, *outFile;
