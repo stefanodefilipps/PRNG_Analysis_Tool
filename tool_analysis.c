@@ -623,14 +623,14 @@ static void fprintfAlg(FILE* report, char** argv, int argc){
                                 if(vel == 0 || vel < 1 || vel > 9){
                                 ShowUsage(argv[0]);
                                 }
-                                fprintf(report,"gzip %d;", vel);
+                                fprintf(report,"lzma %d;", vel);
                             }
                             else{
                                 int vel = atoi(argv[5]+1);              // +1 perchè da linea di comando ho -number e quindi io devo prendere solo number
                                 if(vel == 0 || vel < 1 || vel > 9){
                                 ShowUsage(argv[0]);
                                 }
-                                fprintf(report,"gzip %d;", vel);
+                                fprintf(report,"lzma %d;", vel);
                             }
                         }   
                     }

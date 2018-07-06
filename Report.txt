@@ -1,1813 +1,1007 @@
-File;algoritmo;test;Statistic Value;P Value
 
-Montecristo.txt;Huffman;monobit;11304.036129;0.000000
+Montecristo.txt;bzip2 1;monobit;166.602139;0.000000
 
 
-Montecristo.txt;Huffman;poker;846.451149;0.000000
+Montecristo.txt;bzip2 1;poker;35.701270;0.001952
 
 
-Montecristo.txt;Huffman;run;118599.763384;0.000000
+Montecristo.txt;bzip2 1;run;4145.182518;0.000000
 
 
-Montecristo.txt;Huffman;autoC;-9.166829;1.000000
+Montecristo.txt;bzip2 1;autoC;-2.206628;0.986330
 
 
-Sherlock.txt;Huffman;monobit;2788.060164;0.000000
+Sherlock.txt;bzip2 1;monobit;70.198428;0.000000
 
 
-Sherlock.txt;Huffman;poker;231.298431;0.000000
+Sherlock.txt;bzip2 1;poker;18.854785;0.220390
 
 
-Sherlock.txt;Huffman;run;28602.371541;0.000000
+Sherlock.txt;bzip2 1;run;776.428832;0.000000
 
 
-Sherlock.txt;Huffman;autoC;-3.589829;0.999835
+Sherlock.txt;bzip2 1;autoC;-1.319428;0.906487
 
 
-Ulysses.txt;Huffman;monobit;5232.859183;0.000000
+Ulysses.txt;bzip2 1;monobit;108.861064;0.000000
 
 
-Ulysses.txt;Huffman;poker;151.840885;0.000000
+Ulysses.txt;bzip2 1;poker;39.196020;0.000599
 
 
-Ulysses.txt;Huffman;run;37892.047904;0.000000
+Ulysses.txt;bzip2 1;run;2925.974134;0.000000
 
 
-Ulysses.txt;Huffman;autoC;-5.759377;1.000000
+Ulysses.txt;bzip2 1;autoC;0.405600;0.342518
 
 
-Leviatan.txt;Huffman;monobit;4473.498632;0.000000
+Leviatan.txt;bzip2 1;monobit;18.984153;0.000013
 
 
-Leviatan.txt;Huffman;poker;173.769478;0.000000
+Leviatan.txt;bzip2 1;poker;95.080008;0.000000
 
 
-Leviatan.txt;Huffman;run;61305.191553;0.000000
+Leviatan.txt;bzip2 1;run;2248.169431;0.000000
 
 
-Leviatan.txt;Huffman;autoC;-5.513168;1.000000
+Leviatan.txt;bzip2 1;autoC;-1.393531;0.918270
 
 
-Miserables.txt;Huffman;monobit;7564.575282;0.000000
+Miserables.txt;bzip2 1;monobit;245.221134;0.000000
 
 
-Miserables.txt;Huffman;poker;777.113015;0.000000
+Miserables.txt;bzip2 1;poker;74.188319;0.000000
 
 
-Miserables.txt;Huffman;run;89255.038600;0.000000
+Miserables.txt;bzip2 1;run;4135.834527;0.000000
 
 
-Miserables.txt;Huffman;autoC;-9.740722;1.000000
+Miserables.txt;bzip2 1;autoC;-0.973829;0.834929
 
 
-Grimm.txt;Huffman;monobit;2390.004276;0.000000
+Grimm.txt;bzip2 1;monobit;21.027426;0.000005
 
 
-Grimm.txt;Huffman;poker;149.613462;0.000000
+Grimm.txt;bzip2 1;poker;122.961197;0.000000
 
 
-Grimm.txt;Huffman;run;40650.430371;0.000000
+Grimm.txt;bzip2 1;run;828.079383;0.000000
 
 
-Grimm.txt;Huffman;autoC;-4.110963;0.999980
+Grimm.txt;bzip2 1;autoC;-1.526638;0.936574
 
 
-Montecristo.txt;bzip2;monobit;0.086485;0.768694
+Montecristo.txt;bzip2 2;monobit;15.682669;0.000075
 
 
-Montecristo.txt;bzip2;poker;549.397442;0.000000
+Montecristo.txt;bzip2 2;poker;97.717072;0.000000
 
 
-Montecristo.txt;bzip2;run;4648.893141;0.000000
+Montecristo.txt;bzip2 2;run;3057.213488;0.000000
 
 
-Montecristo.txt;bzip2;autoC;-0.075338;0.530027
+Montecristo.txt;bzip2 2;autoC;-0.906569;0.817683
 
 
-Sherlock.txt;bzip2;monobit;132.516888;0.000000
+Sherlock.txt;bzip2 2;monobit;28.572520;0.000000
 
 
-Sherlock.txt;bzip2;poker;525.145417;0.000000
+Sherlock.txt;bzip2 2;poker;68.459746;0.000000
 
 
-Sherlock.txt;bzip2;run;619.547674;0.000000
+Sherlock.txt;bzip2 2;run;558.641780;0.000000
 
 
-Sherlock.txt;bzip2;autoC;-1.637239;0.949210
+Sherlock.txt;bzip2 2;autoC;-1.068286;0.857304
 
 
-Ulysses.txt;bzip2;monobit;7.746073;0.005383
+Ulysses.txt;bzip2 2;monobit;5.770632;0.016296
 
 
-Ulysses.txt;bzip2;poker;949.872692;0.000000
+Ulysses.txt;bzip2 2;poker;47.043204;0.000036
 
 
-Ulysses.txt;bzip2;run;2358.235229;0.000000
+Ulysses.txt;bzip2 2;run;1763.369436;0.000000
 
 
-Ulysses.txt;bzip2;autoC;-2.215354;0.986632
+Ulysses.txt;bzip2 2;autoC;-1.302221;0.903580
 
 
-Leviatan.txt;bzip2;monobit;8.534084;0.003486
+Leviatan.txt;bzip2 2;monobit;104.861831;0.000000
 
 
-Leviatan.txt;bzip2;poker;711.327236;0.000000
+Leviatan.txt;bzip2 2;poker;54.128713;0.000002
 
 
-Leviatan.txt;bzip2;run;1573.513033;0.000000
+Leviatan.txt;bzip2 2;run;1463.851920;0.000000
 
 
-Leviatan.txt;bzip2;autoC;-1.478800;0.930403
+Leviatan.txt;bzip2 2;autoC;-0.720780;0.764478
 
 
-Miserables.txt;bzip2;monobit;136.640652;0.000000
+Miserables.txt;bzip2 2;monobit;68.731519;0.000000
 
 
-Miserables.txt;bzip2;poker;548.763779;0.000000
+Miserables.txt;bzip2 2;poker;137.017002;0.000000
 
 
-Miserables.txt;bzip2;run;2821.833073;0.000000
+Miserables.txt;bzip2 2;run;3569.373827;0.000000
 
 
-Miserables.txt;bzip2;autoC;-2.570178;0.994918
+Miserables.txt;bzip2 2;autoC;-1.957151;0.974835
 
 
-Grimm.txt;bzip2;monobit;14.309349;0.000155
+Grimm.txt;bzip2 2;monobit;0.822937;0.364323
 
 
-Grimm.txt;bzip2;poker;293.083810;0.000000
+Grimm.txt;bzip2 2;poker;63.633664;0.000000
 
 
-Grimm.txt;bzip2;run;434.833363;0.000000
+Grimm.txt;bzip2 2;run;526.139521;0.000000
 
 
-Grimm.txt;bzip2;autoC;-0.248153;0.597992
+Grimm.txt;bzip2 2;autoC;-0.532399;0.702775
 
+Montecristo.txt;bzip2 4;monobit;62.386779;0.000000
 
-Leviatan.txt.bz2;gzip;monobit;7.838516;0.005114
 
+Montecristo.txt;bzip2 4;poker;174.761577;0.000000
 
-Leviatan.txt.bz2;gzip;poker;733.671871;0.000000
 
+Montecristo.txt;bzip2 4;run;4395.832295;0.000000
 
-Leviatan.txt.bz2;gzip;run;1568.851268;0.000000
 
+Montecristo.txt;bzip2 4;autoC;0.148976;0.440786
 
-Leviatan.txt.bz2;gzip;autoC;-1.365994;0.914030
 
+Sherlock.txt;bzip2 4;monobit;39.104684;0.000000
 
-Montecristo.txt;gzip;monobit;34.626541;0.000000
 
+Sherlock.txt;bzip2 4;poker;205.055807;0.000000
 
-Montecristo.txt;gzip;poker;973.427047;0.000000
 
+Sherlock.txt;bzip2 4;run;548.274323;0.000000
 
-Montecristo.txt;gzip;run;490.488338;0.000000
 
+Sherlock.txt;bzip2 4;autoC;-0.196734;0.577982
 
-Montecristo.txt;gzip;autoC;-2.712223;0.996658
 
+Ulysses.txt;bzip2 4;monobit;150.095701;0.000000
 
-Sherlock.txt;gzip;monobit;42.990514;0.000000
 
+Ulysses.txt;bzip2 4;poker;184.452146;0.000000
 
-Sherlock.txt;gzip;poker;525.811084;0.000000
 
+Ulysses.txt;bzip2 4;run;2268.514867;0.000000
 
-Sherlock.txt;gzip;run;100.324837;0.000000
 
+Ulysses.txt;bzip2 4;autoC;-1.285670;0.900721
 
-Sherlock.txt;gzip;autoC;0.753299;0.225635
 
+Leviatan.txt;bzip2 4;monobit;17.436668;0.000030
 
-Ulysses.txt;gzip;monobit;0.191679;0.661523
 
+Leviatan.txt;bzip2 4;poker;154.804381;0.000000
 
-Ulysses.txt;gzip;poker;271.718473;0.000000
 
+Leviatan.txt;bzip2 4;run;1624.056284;0.000000
 
-Ulysses.txt;gzip;run;249.724822;0.000000
 
+Leviatan.txt;bzip2 4;autoC;-1.400923;0.919381
 
-Ulysses.txt;gzip;autoC;-0.628759;0.735247
 
+Miserables.txt;bzip2 4;monobit;157.780876;0.000000
 
-Ulysses.txt.bz2;gzip;monobit;37.716612;0.000000
 
+Miserables.txt;bzip2 4;poker;129.221023;0.000000
 
-Ulysses.txt.bz2;gzip;poker;76.562957;0.000000
 
+Miserables.txt;bzip2 4;run;3189.497754;0.000000
 
-Ulysses.txt.bz2;gzip;run;1934.845996;0.000000
 
+Miserables.txt;bzip2 4;autoC;-2.957867;0.998451
 
-Ulysses.txt.bz2;gzip;autoC;-1.494437;0.932469
 
+Grimm.txt;bzip2 4;monobit;14.246527;0.000160
 
-Leviatan.txt;gzip;monobit;196.687691;0.000000
 
+Grimm.txt;bzip2 4;poker;161.736274;0.000000
 
-Leviatan.txt;gzip;poker;322.795581;0.000000
 
+Grimm.txt;bzip2 4;run;285.180605;0.000000
 
-Leviatan.txt;gzip;run;699.414002;0.000000
 
+Grimm.txt;bzip2 4;autoC;-1.380476;0.916280
 
-Leviatan.txt;gzip;autoC;-2.114350;0.982757
 
+Montecristo.txt;bzip2 5;monobit;35.464473;0.000000
 
-Miserables.txt;gzip;monobit;97.171796;0.000000
 
+Montecristo.txt;bzip2 5;poker;353.166618;0.000000
 
-Miserables.txt;gzip;poker;132.171718;0.000000
 
+Montecristo.txt;bzip2 5;run;4222.386693;0.000000
 
-Miserables.txt;gzip;run;1060.405795;0.000000
 
+Montecristo.txt;bzip2 5;autoC;-1.376790;0.915711
 
-Miserables.txt;gzip;autoC;0.181787;0.427875
 
+Sherlock.txt;bzip2 5;monobit;39.355322;0.000000
 
-Montecristo.txt.bz2;gzip;monobit;0.144338;0.704006
 
+Sherlock.txt;bzip2 5;poker;362.581960;0.000000
 
-Montecristo.txt.bz2;gzip;poker;566.435946;0.000000
 
+Sherlock.txt;bzip2 5;run;499.301422;0.000000
 
-Montecristo.txt.bz2;gzip;run;4644.795268;0.000000
 
+Sherlock.txt;bzip2 5;autoC;-2.233579;0.987245
 
-Montecristo.txt.bz2;gzip;autoC;-0.108288;0.543117
 
+Ulysses.txt;bzip2 5;monobit;121.840718;0.000000
 
-Grimm.txt.bz2;gzip;monobit;13.582740;0.000228
 
+Ulysses.txt;bzip2 5;poker;391.743276;0.000000
 
-Grimm.txt.bz2;gzip;poker;308.483750;0.000000
 
+Ulysses.txt;bzip2 5;run;2046.792658;0.000000
 
-Grimm.txt.bz2;gzip;run;438.092832;0.000000
 
+Ulysses.txt;bzip2 5;autoC;-2.611849;0.995497
 
-Grimm.txt.bz2;gzip;autoC;-0.179515;0.571233
 
+Leviatan.txt;bzip2 5;monobit;10.689716;0.001077
 
-Miserables.txt.bz2;gzip;monobit;135.509063;0.000000
 
+Leviatan.txt;bzip2 5;poker;252.138915;0.000000
 
-Miserables.txt.bz2;gzip;poker;554.185121;0.000000
 
+Leviatan.txt;bzip2 5;run;2002.832381;0.000000
 
-Miserables.txt.bz2;gzip;run;2814.893644;0.000000
 
+Leviatan.txt;bzip2 5;autoC;-1.115822;0.867751
 
-Miserables.txt.bz2;gzip;autoC;-2.522516;0.994174
 
+Miserables.txt;bzip2 5;monobit;79.809957;0.000000
 
-Sherlock.txt.bz2;gzip;monobit;129.046857;0.000000
 
+Miserables.txt;bzip2 5;poker;200.632964;0.000000
 
-Sherlock.txt.bz2;gzip;poker;528.704173;0.000000
 
+Miserables.txt;bzip2 5;run;2747.000568;0.000000
 
-Sherlock.txt.bz2;gzip;run;625.115400;0.000000
 
+Miserables.txt;bzip2 5;autoC;-2.183999;0.985519
 
-Sherlock.txt.bz2;gzip;autoC;-1.568103;0.941571
 
+Grimm.txt;bzip2 5;monobit;33.084729;0.000000
 
-Grimm.txt;gzip;monobit;73.263079;0.000000
 
+Grimm.txt;bzip2 5;poker;223.009602;0.000000
 
-Grimm.txt;gzip;poker;1084.036509;0.000000
 
+Grimm.txt;bzip2 5;run;358.746986;0.000000
 
-Grimm.txt;gzip;run;196.148529;0.000000
 
+Grimm.txt;bzip2 5;autoC;0.188031;0.425426
 
-Grimm.txt;gzip;autoC;-2.529364;0.994287
 
+Montecristo.txt;bzip2 6;monobit;201.347710;0.000000
 
-Leviatan.txt.bz2.gz;lzma;monobit;0.006469;0.935893
 
+Montecristo.txt;bzip2 6;poker;450.443547;0.000000
 
-Leviatan.txt.bz2.gz;lzma;poker;8.396140;0.906921
 
+Montecristo.txt;bzip2 6;run;2829.385327;0.000000
 
-Leviatan.txt.bz2.gz;lzma;run;19.994162;0.864677
 
+Montecristo.txt;bzip2 6;autoC;-0.364742;0.642348
 
-Leviatan.txt.bz2.gz;lzma;autoC;-1.197827;0.884508
 
+Sherlock.txt;bzip2 6;monobit;132.516888;0.000000
 
-Leviatan.txt.bz2;lzma;monobit;0.534684;0.464644
 
+Sherlock.txt;bzip2 6;poker;525.113414;0.000000
 
-Leviatan.txt.bz2;lzma;poker;11.404440;0.723433
 
+Sherlock.txt;bzip2 6;run;619.286325;0.000000
 
-Leviatan.txt.bz2;lzma;run;19.549757;0.880318
 
+Sherlock.txt;bzip2 6;autoC;-1.627405;0.948174
 
-Leviatan.txt.bz2;lzma;autoC;0.028033;0.488818
 
+Ulysses.txt;bzip2 6;monobit;95.800881;0.000000
 
-Montecristo.txt;lzma;monobit;0.587754;0.443289
 
+Ulysses.txt;bzip2 6;poker;744.392943;0.000000
 
-Montecristo.txt;lzma;poker;15.756876;0.398391
 
+Ulysses.txt;bzip2 6;run;2616.348190;0.000000
 
-Montecristo.txt;lzma;run;33.199555;0.408537
 
+Ulysses.txt;bzip2 6;autoC;-1.838797;0.967027
 
-Montecristo.txt;lzma;autoC;0.452338;0.325513
 
+Leviatan.txt;bzip2 6;monobit;0.539595;0.462601
 
-Ulysses.txt.gz;lzma;monobit;1.272689;0.259263
 
+Leviatan.txt;bzip2 6;poker;318.161518;0.000000
 
-Ulysses.txt.gz;lzma;poker;22.759176;0.089389
 
+Leviatan.txt;bzip2 6;run;2616.354496;0.000000
 
-Ulysses.txt.gz;lzma;run;23.709376;0.854742
 
+Leviatan.txt;bzip2 6;autoC;-2.222928;0.986890
 
-Ulysses.txt.gz;lzma;autoC;-1.311012;0.905073
 
+Miserables.txt;bzip2 6;monobit;17.035579;0.000037
 
-Sherlock.txt.gz;lzma;monobit;0.703036;0.401766
 
+Miserables.txt;bzip2 6;poker;402.553957;0.000000
 
-Sherlock.txt.gz;lzma;poker;17.593859;0.284619
 
+Miserables.txt;bzip2 6;run;2260.936266;0.000000
 
-Sherlock.txt.gz;lzma;run;18.586030;0.910421
 
+Miserables.txt;bzip2 6;autoC;-2.490743;0.993626
 
-Sherlock.txt.gz;lzma;autoC;0.066890;0.473335
 
+Grimm.txt;bzip2 6;monobit;14.309349;0.000155
 
-Sherlock.txt;lzma;monobit;0.138161;0.710117
 
+Grimm.txt;bzip2 6;poker;293.301432;0.000000
 
-Sherlock.txt;lzma;poker;26.017102;0.037843
 
+Grimm.txt;bzip2 6;run;435.409531;0.000000
 
-Sherlock.txt;lzma;run;14.252155;0.985301
 
+Grimm.txt;bzip2 6;autoC;-0.248153;0.597992
 
-Sherlock.txt;lzma;autoC;0.152791;0.439282
 
+Montecristo.txt;bzip2 7;monobit;5.936633;0.014829
 
-Grimm.txt.gz;lzma;monobit;0.237032;0.626358
 
+Montecristo.txt;bzip2 7;poker;419.976500;0.000000
 
-Grimm.txt.gz;lzma;poker;14.079908;0.519478
 
+Montecristo.txt;bzip2 7;run;4312.245703;0.000000
 
-Grimm.txt.gz;lzma;run;25.346664;0.608909
 
+Montecristo.txt;bzip2 7;autoC;-2.214637;0.986608
 
-Grimm.txt.gz;lzma;autoC;-0.212428;0.584114
 
+Sherlock.txt;bzip2 7;monobit;132.629764;0.000000
 
-Ulysses.txt;lzma;monobit;0.468824;0.493529
 
+Sherlock.txt;bzip2 7;poker;525.094212;0.000000
 
-Ulysses.txt;lzma;poker;19.379638;0.197043
 
+Sherlock.txt;bzip2 7;run;619.506252;0.000000
 
-Ulysses.txt;lzma;run;28.059082;0.567306
 
+Sherlock.txt;bzip2 7;autoC;-1.632322;0.948694
 
-Ulysses.txt;lzma;autoC;1.496052;0.067320
 
+Ulysses.txt;bzip2 7;monobit;3.534411;0.060108
 
-Ulysses.txt.bz2;lzma;monobit;1.375786;0.240820
 
+Ulysses.txt;bzip2 7;poker;885.117416;0.000000
 
-Ulysses.txt.bz2;lzma;poker;12.095710;0.671771
 
+Ulysses.txt;bzip2 7;run;2216.031553;0.000000
 
-Ulysses.txt.bz2;lzma;run;33.677758;0.293898
 
+Ulysses.txt;bzip2 7;autoC;0.709493;0.239009
 
-Ulysses.txt.bz2;lzma;autoC;1.542374;0.061491
 
+Leviatan.txt;bzip2 7;monobit;2.053290;0.151878
 
-Grimm.txt.bz2.gz;lzma;monobit;0.580273;0.446205
 
+Leviatan.txt;bzip2 7;poker;412.974199;0.000000
 
-Grimm.txt.bz2.gz;lzma;poker;18.592359;0.232804
 
+Leviatan.txt;bzip2 7;run;1879.211780;0.000000
 
-Grimm.txt.bz2.gz;lzma;run;23.586320;0.599607
 
+Leviatan.txt;bzip2 7;autoC;-1.472196;0.929516
 
-Grimm.txt.bz2.gz;lzma;autoC;1.481504;0.069236
 
+Miserables.txt;bzip2 7;monobit;223.201507;0.000000
 
-Montecristo.txt.gz;lzma;monobit;0.736672;0.390729
 
+Miserables.txt;bzip2 7;poker;528.128115;0.000000
 
-Montecristo.txt.gz;lzma;poker;18.816382;0.222175
 
+Miserables.txt;bzip2 7;run;2487.137497;0.000000
 
-Montecristo.txt.gz;lzma;run;30.703974;0.532082
 
+Miserables.txt;bzip2 7;autoC;0.180047;0.428558
 
-Montecristo.txt.gz;lzma;autoC;1.997770;0.022871
 
+Grimm.txt;bzip2 7;monobit;14.349180;0.000152
 
-Leviatan.txt;lzma;monobit;0.597658;0.439473
 
+Grimm.txt;bzip2 7;poker;293.019803;0.000000
 
-Leviatan.txt;lzma;poker;20.166917;0.165623
 
+Grimm.txt;bzip2 7;run;435.097335;0.000000
 
-Leviatan.txt;lzma;run;55.041006;0.003512
 
+Grimm.txt;bzip2 7;autoC;-0.253433;0.600033
 
-Leviatan.txt;lzma;autoC;1.487693;0.068416
 
+Montecristo.txt;bzip2 8;monobit;18.966346;0.000013
 
-Miserables.txt;lzma;monobit;0.051632;0.820247
 
+Montecristo.txt;bzip2 8;poker;694.096713;0.000000
 
-Miserables.txt;lzma;poker;7.564056;0.940070
 
+Montecristo.txt;bzip2 8;run;4749.923086;0.000000
 
-Miserables.txt;lzma;run;26.339380;0.748402
 
+Montecristo.txt;bzip2 8;autoC;-1.141370;0.873142
 
-Miserables.txt;lzma;autoC;-1.061623;0.855797
 
+Sherlock.txt;bzip2 8;monobit;132.404059;0.000000
 
-Montecristo.txt.bz2;lzma;monobit;0.004775;0.944907
 
+Sherlock.txt;bzip2 8;poker;525.228625;0.000000
 
-Montecristo.txt.bz2;lzma;poker;19.078808;0.210185
 
+Sherlock.txt;bzip2 8;run;619.423713;0.000000
 
-Montecristo.txt.bz2;lzma;run;31.460128;0.493735
 
+Sherlock.txt;bzip2 8;autoC;-1.632322;0.948694
 
-Montecristo.txt.bz2;lzma;autoC;-1.153316;0.875610
 
+Ulysses.txt;bzip2 8;monobit;12.870119;0.000334
 
-Grimm.txt.bz2;lzma;monobit;2.784523;0.095179
 
+Ulysses.txt;bzip2 8;poker;717.849488;0.000000
 
-Grimm.txt.bz2;lzma;poker;22.816782;0.088108
 
+Ulysses.txt;bzip2 8;run;2234.151827;0.000000
 
-Grimm.txt.bz2;lzma;run;45.952048;0.009235
 
+Ulysses.txt;bzip2 8;autoC;-1.196996;0.884346
 
-Grimm.txt.bz2;lzma;autoC;1.267088;0.102562
 
+Leviatan.txt;bzip2 8;monobit;13.755994;0.000208
 
-Miserables.txt.bz2.gz;lzma;monobit;0.306358;0.579924
 
+Leviatan.txt;bzip2 8;poker;684.406144;0.000000
 
-Miserables.txt.bz2.gz;lzma;poker;6.706371;0.965291
 
+Leviatan.txt;bzip2 8;run;1022.538391;0.000000
 
-Miserables.txt.bz2.gz;lzma;run;49.204206;0.026556
 
+Leviatan.txt;bzip2 8;autoC;-1.253521;0.894992
 
-Miserables.txt.bz2.gz;lzma;autoC;0.075890;0.469753
 
+Miserables.txt;bzip2 8;monobit;136.002728;0.000000
 
-Miserables.txt.bz2;lzma;monobit;0.031450;0.859239
 
+Miserables.txt;bzip2 8;poker;453.170219;0.000000
 
-Miserables.txt.bz2;lzma;poker;15.430443;0.420879
 
+Miserables.txt;bzip2 8;run;2342.457734;0.000000
 
-Miserables.txt.bz2;lzma;run;28.789304;0.629842
 
+Miserables.txt;bzip2 8;autoC;-0.948411;0.828540
 
-Miserables.txt.bz2;lzma;autoC;-0.213333;0.584467
 
+Grimm.txt;bzip2 8;monobit;14.269573;0.000158
 
-Montecristo.txt.bz2.gz;lzma;monobit;6.629787;0.010029
 
+Grimm.txt;bzip2 8;poker;293.115813;0.000000
 
-Montecristo.txt.bz2.gz;lzma;poker;15.532853;0.413758
 
+Grimm.txt;bzip2 8;run;435.179079;0.000000
 
-Montecristo.txt.bz2.gz;lzma;run;33.626652;0.388552
 
+Grimm.txt;bzip2 8;autoC;-0.242873;0.595948
 
-Montecristo.txt.bz2.gz;lzma;autoC;-1.040501;0.850946
 
+Montecristo.txt;lzma 1;monobit;0.252446;0.615358
 
-Ulysses.txt.bz2.gz;lzma;monobit;0.105607;0.745201
 
+Montecristo.txt;lzma 1;poker;17.459446;0.292148
 
-Ulysses.txt.bz2.gz;lzma;poker;14.009501;0.524809
 
+Montecristo.txt;lzma 1;run;33.905961;0.375726
 
-Ulysses.txt.bz2.gz;lzma;run;32.168638;0.359726
 
+Montecristo.txt;lzma 1;autoC;0.083445;0.466749
 
-Ulysses.txt.bz2.gz;lzma;autoC;0.883118;0.188586
 
+Sherlock.txt;lzma 1;monobit;0.105305;0.745554
 
-Sherlock.txt.bz2;lzma;monobit;0.015474;0.901001
 
+Sherlock.txt;lzma 1;poker;15.609661;0.408457
 
-Sherlock.txt.bz2;lzma;poker;19.168417;0.206203
 
+Sherlock.txt;lzma 1;run;40.038945;0.065601
 
-Sherlock.txt.bz2;lzma;run;38.019226;0.098036
 
+Sherlock.txt;lzma 1;autoC;0.847362;0.198397
 
-Sherlock.txt.bz2;lzma;autoC;-0.283796;0.611717
 
+Ulysses.txt;lzma 1;monobit;0.170031;0.680084
 
-Sherlock.txt.bz2.gz;lzma;monobit;0.732620;0.392035
 
+Ulysses.txt;lzma 1;poker;13.139014;0.591561
 
-Sherlock.txt.bz2.gz;lzma;poker;19.859686;0.177382
 
+Ulysses.txt;lzma 1;run;39.366154;0.117736
 
-Sherlock.txt.bz2.gz;lzma;run;23.576476;0.703680
 
+Ulysses.txt;lzma 1;autoC;1.094572;0.136852
 
-Sherlock.txt.bz2.gz;lzma;autoC;-0.034245;0.513659
 
+Leviatan.txt;lzma 1;monobit;0.354030;0.551841
 
-Leviatan.txt.gz;lzma;monobit;0.827769;0.362918
 
+Leviatan.txt;lzma 1;poker;13.311831;0.578226
 
-Leviatan.txt.gz;lzma;poker;14.739174;0.470363
 
+Leviatan.txt;lzma 1;run;22.042405;0.852497
 
-Leviatan.txt.gz;lzma;run;33.172212;0.315117
 
+Leviatan.txt;lzma 1;autoC;0.427937;0.334348
 
-Leviatan.txt.gz;lzma;autoC;-0.732287;0.768003
 
+Miserables.txt;lzma 1;monobit;3.866203;0.049268
 
-Grimm.txt;lzma;monobit;0.000619;0.980150
 
+Miserables.txt;lzma 1;poker;5.317432;0.989080
 
-Grimm.txt;lzma;poker;17.184218;0.307972
 
+Miserables.txt;lzma 1;run;40.240002;0.150408
 
-Grimm.txt;lzma;run;22.165249;0.679622
 
+Miserables.txt;lzma 1;autoC;-1.081395;0.860239
 
-Grimm.txt;lzma;autoC;0.214657;0.415017
 
+Grimm.txt;lzma 1;monobit;0.858154;0.354256
 
-Miserables.txt.gz;lzma;monobit;0.810198;0.368062
 
+Grimm.txt;lzma 1;poker;15.449645;0.419539
 
-Miserables.txt.gz;lzma;poker;26.394740;0.034073
 
+Grimm.txt;lzma 1;run;28.378273;0.444544
 
-Miserables.txt.gz;lzma;run;33.704052;0.384978
 
+Grimm.txt;lzma 1;autoC;-1.435719;0.924459
 
-Miserables.txt.gz;lzma;autoC;0.687402;0.245915
 
+Montecristo.txt;lzma 2;monobit;0.008416;0.926905
 
-Leviatan.txt.bz2.gz;Aritmetic;monobit;0.745230;0.387991
 
+Montecristo.txt;lzma 2;poker;14.905591;0.458239
 
-Leviatan.txt.bz2.gz;Aritmetic;poker;28.686169;0.017648
 
+Montecristo.txt;lzma 2;run;31.949868;0.469234
 
-Leviatan.txt.bz2.gz;Aritmetic;run;24.586508;0.650236
 
+Montecristo.txt;lzma 2;autoC;3.327426;0.000438
 
-Leviatan.txt.bz2.gz;Aritmetic;autoC;-1.377034;0.915749
 
+Sherlock.txt;lzma 2;monobit;3.866575;0.049257
 
-Miserables.txt.gz.lzma;Aritmetic;monobit;0.004911;0.944133
 
+Sherlock.txt;lzma 2;poker;21.517452;0.121095
 
-Miserables.txt.gz.lzma;Aritmetic;poker;16.710571;0.336459
 
+Sherlock.txt;lzma 2;run;28.393724;0.443737
 
-Miserables.txt.gz.lzma;Aritmetic;run;16.207230;0.990790
 
+Sherlock.txt;lzma 2;autoC;0.034887;0.486085
 
-Miserables.txt.gz.lzma;Aritmetic;autoC;-1.133937;0.871589
 
+Ulysses.txt;lzma 2;monobit;0.652801;0.419113
 
-Sherlock.txt.bz2.gz.lzma;Aritmetic;monobit;0.040906;0.839719
 
+Ulysses.txt;lzma 2;poker;14.585559;0.481661
 
-Sherlock.txt.bz2.gz.lzma;Aritmetic;poker;17.389039;0.296144
 
+Ulysses.txt;lzma 2;run;25.002024;0.724934
 
-Sherlock.txt.bz2.gz.lzma;Aritmetic;run;43.438119;0.031555
 
+Ulysses.txt;lzma 2;autoC;1.163299;0.122354
 
-Sherlock.txt.bz2.gz.lzma;Aritmetic;autoC;1.603380;0.054425
 
+Leviatan.txt;lzma 2;monobit;2.027623;0.154462
 
-Leviatan.txt.bz2;Aritmetic;monobit;0.299167;0.584405
 
+Leviatan.txt;lzma 2;poker;10.009101;0.819167
 
-Leviatan.txt.bz2;Aritmetic;poker;15.360036;0.425807
 
+Leviatan.txt;lzma 2;run;28.932821;0.521128
 
-Leviatan.txt.bz2;Aritmetic;run;32.582455;0.251460
 
+Leviatan.txt;lzma 2;autoC;1.391185;0.082085
 
-Leviatan.txt.bz2;Aritmetic;autoC;0.539027;0.294934
 
+Miserables.txt;lzma 2;monobit;1.247012;0.264124
 
-Montecristo.txt;Aritmetic;monobit;1.721157;0.189544
 
+Miserables.txt;lzma 2;poker;15.296030;0.430311
 
-Montecristo.txt;Aritmetic;poker;12.057306;0.674686
 
+Miserables.txt;lzma 2;run;33.614857;0.389098
 
-Montecristo.txt;Aritmetic;run;30.993481;0.615761
 
+Miserables.txt;lzma 2;autoC;0.164129;0.434815
 
-Montecristo.txt;Aritmetic;autoC;1.679797;0.046498
 
+Grimm.txt;lzma 2;monobit;0.991743;0.319317
 
-Montecristo.txt.bz2.gz.lzma;Aritmetic;monobit;0.534938;0.464538
 
+Grimm.txt;lzma 2;poker;28.916592;0.016487
 
-Montecristo.txt.bz2.gz.lzma;Aritmetic;poker;14.950395;0.454996
 
+Grimm.txt;lzma 2;run;32.402210;0.258453
 
-Montecristo.txt.bz2.gz.lzma;Aritmetic;run;36.766274;0.257521
 
+Grimm.txt;lzma 2;autoC;-0.435017;0.668225
 
-Montecristo.txt.bz2.gz.lzma;Aritmetic;autoC;1.353723;0.087912
 
+Montecristo.txt;lzma 4;monobit;0.094258;0.758832
 
-Ulysses.txt.gz;Aritmetic;monobit;0.484464;0.486407
 
+Montecristo.txt;lzma 4;poker;9.791479;0.832647
 
-Ulysses.txt.gz;Aritmetic;poker;22.842384;0.087544
 
+Montecristo.txt;lzma 4;run;33.715127;0.384468
 
-Ulysses.txt.gz;Aritmetic;run;25.940933;0.678143
 
+Montecristo.txt;lzma 4;autoC;-1.758042;0.960630
 
-Ulysses.txt.gz;Aritmetic;autoC;-0.037118;0.514804
 
+Sherlock.txt;lzma 4;monobit;0.366150;0.545110
 
-Sherlock.txt.gz;Aritmetic;monobit;1.022994;0.311810
 
+Sherlock.txt;lzma 4;poker;11.225223;0.736471
 
-Sherlock.txt.gz;Aritmetic;poker;9.951495;0.822780
 
+Sherlock.txt;lzma 4;run;34.805028;0.175614
 
-Sherlock.txt.gz;Aritmetic;run;26.988372;0.518880
 
+Sherlock.txt;lzma 4;autoC;-1.900900;0.971342
 
-Sherlock.txt.gz;Aritmetic;autoC;-0.656181;0.744146
 
+Ulysses.txt;lzma 4;monobit;0.799490;0.371246
 
-Sherlock.txt;Aritmetic;monobit;3.622358;0.057008
 
+Ulysses.txt;lzma 4;poker;8.165717;0.916967
 
-Sherlock.txt;Aritmetic;poker;10.527553;0.785310
 
+Ulysses.txt;lzma 4;run;36.544712;0.190782
 
-Sherlock.txt;Aritmetic;run;22.840111;0.821775
 
+Ulysses.txt;lzma 4;autoC;0.364518;0.357736
 
-Sherlock.txt;Aritmetic;autoC;-1.354408;0.912197
 
+Leviatan.txt;lzma 4;monobit;3.092303;0.078663
 
-Montecristo.txt.lzma;Aritmetic;monobit;2.170927;0.140641
 
+Leviatan.txt;lzma 4;poker;8.741774;0.890628
 
-Montecristo.txt.lzma;Aritmetic;poker;24.493749;0.057169
 
+Leviatan.txt;lzma 4;run;30.393333;0.445647
 
-Montecristo.txt.lzma;Aritmetic;run;40.363447;0.147339
 
+Leviatan.txt;lzma 4;autoC;0.501227;0.308106
 
-Montecristo.txt.lzma;Aritmetic;autoC;0.822371;0.205433
 
+Miserables.txt;lzma 4;monobit;0.159028;0.690053
 
-Grimm.txt.gz;Aritmetic;monobit;0.318750;0.572360
 
+Miserables.txt;lzma 4;poker;13.126213;0.592550
 
-Grimm.txt.gz;Aritmetic;poker;14.521552;0.486397
 
+Miserables.txt;lzma 4;run;25.522502;0.784330
 
-Grimm.txt.gz;Aritmetic;run;49.106835;0.008121
 
+Miserables.txt;lzma 4;autoC;-0.335674;0.631442
 
-Grimm.txt.gz;Aritmetic;autoC;-0.436472;0.668753
 
+Grimm.txt;lzma 4;monobit;0.331546;0.564750
 
-Ulysses.txt;Aritmetic;monobit;0.315510;0.574318
 
+Grimm.txt;lzma 4;poker;18.112311;0.256807
 
-Ulysses.txt;Aritmetic;poker;9.298630;0.861392
 
+Grimm.txt;lzma 4;run;22.271722;0.673742
 
-Ulysses.txt;Aritmetic;run;22.464316;0.894487
 
+Grimm.txt;lzma 4;autoC;0.713957;0.237627
 
-Ulysses.txt;Aritmetic;autoC;1.263765;0.103157
 
+Montecristo.txt;lzma 5;monobit;0.949688;0.329799
 
-Ulysses.txt.bz2;Aritmetic;monobit;0.253399;0.614692
 
+Montecristo.txt;lzma 5;poker;10.393139;0.794309
 
-Ulysses.txt.bz2;Aritmetic;poker;14.387139;0.496393
 
+Montecristo.txt;lzma 5;run;44.837913;0.065449
 
-Ulysses.txt.bz2;Aritmetic;run;48.345371;0.018308
 
+Montecristo.txt;lzma 5;autoC;1.043354;0.148392
 
-Ulysses.txt.bz2;Aritmetic;autoC;-0.459341;0.677005
 
+Sherlock.txt;lzma 5;monobit;1.080547;0.298575
 
-Grimm.txt.bz2.gz;Aritmetic;monobit;1.536029;0.215210
 
+Sherlock.txt;lzma 5;poker;12.319732;0.654684
 
-Grimm.txt.bz2.gz;Aritmetic;poker;17.043404;0.316276
 
+Sherlock.txt;lzma 5;run;29.306960;0.397085
 
-Grimm.txt.bz2.gz;Aritmetic;run;36.141364;0.089100
 
+Sherlock.txt;lzma 5;autoC;-0.097064;0.538662
 
-Grimm.txt.bz2.gz;Aritmetic;autoC;0.089778;0.464232
 
+Ulysses.txt;lzma 5;monobit;1.361182;0.243333
 
-Ulysses.txt.bz2.lzma;Aritmetic;monobit;0.302703;0.582193
 
+Ulysses.txt;lzma 5;poker;13.139014;0.591561
 
-Ulysses.txt.bz2.lzma;Aritmetic;poker;11.641264;0.705954
 
+Ulysses.txt;lzma 5;run;30.969490;0.416908
 
-Ulysses.txt.bz2.lzma;Aritmetic;run;37.143182;0.173008
 
+Ulysses.txt;lzma 5;autoC;-0.580487;0.719207
 
-Ulysses.txt.bz2.lzma;Aritmetic;autoC;-1.228753;0.890418
 
+Leviatan.txt;lzma 5;monobit;0.422485;0.515700
 
-Leviatan.txt.gz.lzma;Aritmetic;monobit;0.693696;0.404910
 
+Leviatan.txt;lzma 5;poker;22.202320;0.102608
 
-Leviatan.txt.gz.lzma;Aritmetic;poker;19.475648;0.192983
 
+Leviatan.txt;lzma 5;run;38.033930;0.148880
 
-Leviatan.txt.gz.lzma;Aritmetic;run;35.523329;0.224097
 
+Leviatan.txt;lzma 5;autoC;0.829681;0.203360
 
-Leviatan.txt.gz.lzma;Aritmetic;autoC;-0.674876;0.750123
 
+Miserables.txt;lzma 5;monobit;0.000298;0.986224
 
-Montecristo.txt.gz;Aritmetic;monobit;0.030864;0.860544
 
+Miserables.txt;lzma 5;poker;21.837484;0.112137
 
-Montecristo.txt.gz;Aritmetic;poker;20.173317;0.165384
 
+Miserables.txt;lzma 5;run;35.029924;0.326273
 
-Montecristo.txt.gz;Aritmetic;run;44.147021;0.074770
 
+Miserables.txt;lzma 5;autoC;1.367818;0.085684
 
-Montecristo.txt.gz;Aritmetic;autoC;0.311817;0.377590
 
+Grimm.txt;lzma 5;monobit;0.223474;0.636406
 
-Leviatan.txt.bz2.lzma;Aritmetic;monobit;5.046547;0.024675
 
+Grimm.txt;lzma 5;poker;16.364937;0.358221
 
-Leviatan.txt.bz2.lzma;Aritmetic;poker;11.154815;0.741545
 
+Grimm.txt;lzma 5;run;30.187237;0.259927
 
-Leviatan.txt.bz2.lzma;Aritmetic;run;45.238659;0.020865
 
+Grimm.txt;lzma 5;autoC;-0.114816;0.545705
 
-Leviatan.txt.bz2.lzma;Aritmetic;autoC;-2.178183;0.985304
 
+Montecristo.txt;lzma 6;monobit;0.587754;0.443289
 
-Ulysses.txt.lzma;Aritmetic;monobit;0.059966;0.806550
 
+Montecristo.txt;lzma 6;poker;15.756876;0.398391
 
-Ulysses.txt.lzma;Aritmetic;poker;14.905591;0.458239
 
+Montecristo.txt;lzma 6;run;33.199555;0.408537
 
-Ulysses.txt.lzma;Aritmetic;run;57.260436;0.001951
 
+Montecristo.txt;lzma 6;autoC;0.452338;0.325513
 
-Ulysses.txt.lzma;Aritmetic;autoC;1.312694;0.094643
 
+Sherlock.txt;lzma 6;monobit;0.138161;0.710117
 
-Leviatan.txt;Aritmetic;monobit;2.357377;0.124692
 
+Sherlock.txt;lzma 6;poker;26.017102;0.037843
 
-Leviatan.txt;Aritmetic;poker;17.030603;0.317038
 
+Sherlock.txt;lzma 6;run;14.252155;0.985301
 
-Leviatan.txt;Aritmetic;run;39.721869;0.163821
 
+Sherlock.txt;lzma 6;autoC;0.152791;0.439282
 
-Leviatan.txt;Aritmetic;autoC;-1.118721;0.868370
 
+Ulysses.txt;lzma 6;monobit;0.468824;0.493529
 
-Sherlock.txt.lzma;Aritmetic;monobit;1.257178;0.262186
 
+Ulysses.txt;lzma 6;poker;19.379638;0.197043
 
-Sherlock.txt.lzma;Aritmetic;poker;10.975598;0.754322
 
+Ulysses.txt;lzma 6;run;28.059082;0.567306
 
-Sherlock.txt.lzma;Aritmetic;run;36.567320;0.128713
 
+Ulysses.txt;lzma 6;autoC;1.496052;0.067320
 
-Sherlock.txt.lzma;Aritmetic;autoC;-0.805073;0.789611
 
+Leviatan.txt;lzma 6;monobit;0.597658;0.439473
 
-Miserables.txt;Aritmetic;monobit;0.085386;0.770127
 
+Leviatan.txt;lzma 6;poker;20.166917;0.165623
 
-Miserables.txt;Aritmetic;poker;22.925593;0.085732
 
+Leviatan.txt;lzma 6;run;55.041006;0.003512
 
-Miserables.txt;Aritmetic;run;35.193043;0.411478
 
+Leviatan.txt;lzma 6;autoC;1.487693;0.068416
 
-Miserables.txt;Aritmetic;autoC;0.702066;0.241319
 
+Miserables.txt;lzma 6;monobit;0.051632;0.820247
 
-Ulysses.txt.bz2.gz.lzma;Aritmetic;monobit;0.862546;0.353027
 
+Miserables.txt;lzma 6;poker;7.564056;0.940070
 
-Ulysses.txt.bz2.gz.lzma;Aritmetic;poker;12.550155;0.637000
 
+Miserables.txt;lzma 6;run;26.339380;0.748402
 
-Ulysses.txt.bz2.gz.lzma;Aritmetic;run;36.682305;0.186582
 
+Miserables.txt;lzma 6;autoC;-1.061623;0.855797
 
-Ulysses.txt.bz2.gz.lzma;Aritmetic;autoC;-0.821735;0.794386
 
+Grimm.txt;lzma 6;monobit;0.000619;0.980150
 
-Montecristo.txt.bz2;Aritmetic;monobit;4.647073;0.031107
 
+Grimm.txt;lzma 6;poker;17.184218;0.307972
 
-Montecristo.txt.bz2;Aritmetic;poker;15.014401;0.450380
 
+Grimm.txt;lzma 6;run;22.165249;0.679622
 
-Montecristo.txt.bz2;Aritmetic;run;36.473886;0.268406
 
+Grimm.txt;lzma 6;autoC;0.214657;0.415017
 
-Montecristo.txt.bz2;Aritmetic;autoC;-0.558453;0.711732
 
+Montecristo.txt;lzma 7;monobit;0.587754;0.443289
 
-Miserables.txt.bz2.gz.lzma;Aritmetic;monobit;0.007230;0.932240
 
+Montecristo.txt;lzma 7;poker;15.782478;0.396654
 
-Miserables.txt.bz2.gz.lzma;Aritmetic;poker;8.831383;0.886167
 
+Montecristo.txt;lzma 7;run;33.577580;0.390826
 
-Miserables.txt.bz2.gz.lzma;Aritmetic;run;33.032779;0.416456
 
+Montecristo.txt;lzma 7;autoC;0.447792;0.327152
 
-Miserables.txt.bz2.gz.lzma;Aritmetic;autoC;0.869174;0.192376
 
+Sherlock.txt;lzma 7;monobit;0.138161;0.710117
 
-Grimm.txt.bz2;Aritmetic;monobit;0.297020;0.585757
 
+Sherlock.txt;lzma 7;poker;26.029903;0.037710
 
-Grimm.txt.bz2;Aritmetic;poker;28.135714;0.020735
 
+Sherlock.txt;lzma 7;run;14.343072;0.984570
 
-Grimm.txt.bz2;Aritmetic;run;31.165385;0.222167
 
+Sherlock.txt;lzma 7;autoC;0.152791;0.439282
 
-Grimm.txt.bz2;Aritmetic;autoC;1.152037;0.124653
 
+Ulysses.txt;lzma 7;monobit;0.468824;0.493529
 
-Montecristo.txt.gz.lzma;Aritmetic;monobit;0.015681;0.900348
 
+Ulysses.txt;lzma 7;poker;19.341234;0.198685
 
-Montecristo.txt.gz.lzma;Aritmetic;poker;7.967297;0.925087
 
+Ulysses.txt;lzma 7;run;28.251896;0.557090
 
-Montecristo.txt.gz.lzma;Aritmetic;run;36.107994;0.282429
 
+Ulysses.txt;lzma 7;autoC;1.496052;0.067320
 
-Montecristo.txt.gz.lzma;Aritmetic;autoC;0.234784;0.407188
 
+Leviatan.txt;lzma 7;monobit;0.597658;0.439473
 
-Miserables.txt.bz2.gz;Aritmetic;monobit;2.077715;0.149464
 
+Leviatan.txt;lzma 7;poker;20.499750;0.153588
 
-Miserables.txt.bz2.gz;Aritmetic;poker;26.772377;0.030647
 
+Leviatan.txt;lzma 7;run;53.053302;0.005851
 
-Miserables.txt.bz2.gz;Aritmetic;run;39.559279;0.168210
 
+Leviatan.txt;lzma 7;autoC;1.487693;0.068416
 
-Miserables.txt.bz2.gz;Aritmetic;autoC;-0.362869;0.641649
 
+Miserables.txt;lzma 7;monobit;0.051632;0.820247
 
-Miserables.txt.bz2;Aritmetic;monobit;0.432196;0.510913
 
+Miserables.txt;lzma 7;poker;7.704870;0.935069
 
-Miserables.txt.bz2;Aritmetic;poker;10.764376;0.769111
 
+Miserables.txt;lzma 7;run;26.960594;0.719653
 
-Miserables.txt.bz2;Aritmetic;run;49.922830;0.022678
 
+Miserables.txt;lzma 7;autoC;-1.061623;0.855797
 
-Miserables.txt.bz2;Aritmetic;autoC;-1.569156;0.941694
 
+Grimm.txt;lzma 7;monobit;0.000619;0.980150
 
-Montecristo.txt.bz2.gz;Aritmetic;monobit;0.068900;0.792944
 
+Grimm.txt;lzma 7;poker;17.056206;0.315516
 
-Montecristo.txt.bz2.gz;Aritmetic;poker;8.831383;0.886167
 
+Grimm.txt;lzma 7;run;21.972809;0.690183
 
-Montecristo.txt.bz2.gz;Aritmetic;run;37.196250;0.242040
 
+Grimm.txt;lzma 7;autoC;0.224641;0.411129
 
-Montecristo.txt.bz2.gz;Aritmetic;autoC;1.877588;0.030219
 
+Montecristo.txt;lzma 8;monobit;0.587754;0.443289
 
-Ulysses.txt.bz2.gz;Aritmetic;monobit;3.931033;0.047403
 
+Montecristo.txt;lzma 8;poker;15.731273;0.400133
 
-Ulysses.txt.bz2.gz;Aritmetic;poker;12.633363;0.630593
 
+Montecristo.txt;lzma 8;run;33.635282;0.388153
 
-Ulysses.txt.bz2.gz;Aritmetic;run;49.015921;0.015659
 
+Montecristo.txt;lzma 8;autoC;0.447792;0.327152
 
-Ulysses.txt.bz2.gz;Aritmetic;autoC;0.395250;0.346329
 
+Sherlock.txt;lzma 8;monobit;0.138161;0.710117
 
-Leviatan.txt.bz2.gz.lzma;Aritmetic;monobit;0.051605;0.820294
 
+Sherlock.txt;lzma 8;poker;25.735474;0.040897
 
-Leviatan.txt.bz2.gz.lzma;Aritmetic;poker;14.028703;0.523353
 
+Sherlock.txt;lzma 8;run;14.419006;0.983939
 
-Leviatan.txt.bz2.gz.lzma;Aritmetic;run;26.759006;0.531398
 
+Sherlock.txt;lzma 8;autoC;0.143531;0.442935
 
-Leviatan.txt.bz2.gz.lzma;Aritmetic;autoC;0.770079;0.220627
 
+Ulysses.txt;lzma 8;monobit;0.468824;0.493529
 
-Sherlock.txt.bz2;Aritmetic;monobit;0.831715;0.361777
 
+Ulysses.txt;lzma 8;poker;19.264426;0.202000
 
-Sherlock.txt.bz2;Aritmetic;poker;26.093909;0.037047
 
+Ulysses.txt;lzma 8;run;28.185812;0.560591
 
-Sherlock.txt.bz2;Aritmetic;run;29.465687;0.389202
 
+Ulysses.txt;lzma 8;autoC;1.490602;0.068033
 
-Sherlock.txt.bz2;Aritmetic;autoC;0.245903;0.402879
 
+Leviatan.txt;lzma 8;monobit;0.597658;0.439473
 
-Grimm.txt.bz2.gz.lzma;Aritmetic;monobit;1.543738;0.214062
 
+Leviatan.txt;lzma 8;poker;20.339734;0.159284
 
-Grimm.txt.bz2.gz.lzma;Aritmetic;poker;12.569357;0.635522
 
+Leviatan.txt;lzma 8;run;53.025751;0.005891
 
-Grimm.txt.bz2.gz.lzma;Aritmetic;run;37.410950;0.068611
 
+Leviatan.txt;lzma 8;autoC;1.487693;0.068416
 
-Grimm.txt.bz2.gz.lzma;Aritmetic;autoC;1.433115;0.075912
 
+Miserables.txt;lzma 8;monobit;0.051632;0.820247
 
-Sherlock.txt.gz.lzma;Aritmetic;monobit;1.116745;0.290620
 
+Miserables.txt;lzma 8;poker;7.551255;0.940512
 
-Sherlock.txt.gz.lzma;Aritmetic;poker;9.817082;0.831085
 
+Miserables.txt;lzma 8;run;26.960495;0.719658
 
-Sherlock.txt.gz.lzma;Aritmetic;run;35.489386;0.156066
 
+Miserables.txt;lzma 8;autoC;-1.057563;0.854873
 
-Sherlock.txt.gz.lzma;Aritmetic;autoC;-0.271570;0.607024
 
+Grimm.txt;lzma 8;monobit;0.000619;0.980150
 
-Sherlock.txt.bz2.lzma;Aritmetic;monobit;2.556654;0.109831
 
+Grimm.txt;lzma 8;poker;17.107411;0.312484
 
-Sherlock.txt.bz2.lzma;Aritmetic;poker;17.523452;0.288547
 
+Grimm.txt;lzma 8;run;21.983564;0.689596
 
-Sherlock.txt.bz2.lzma;Aritmetic;run;33.568170;0.215453
 
-
-Sherlock.txt.bz2.lzma;Aritmetic;autoC;-0.772581;0.780115
-
-
-Leviatan.txt.lzma;Aritmetic;monobit;0.538598;0.463014
-
-
-Leviatan.txt.lzma;Aritmetic;poker;17.273827;0.302760
-
-
-Leviatan.txt.lzma;Aritmetic;run;28.844275;0.525788
-
-
-Leviatan.txt.lzma;Aritmetic;autoC;-0.606835;0.728020
-
-
-Sherlock.txt.bz2.gz;Aritmetic;monobit;0.285515;0.593109
-
-
-Sherlock.txt.bz2.gz;Aritmetic;poker;14.380738;0.496871
-
-
-Sherlock.txt.bz2.gz;Aritmetic;run;20.794419;0.833814
-
-
-Sherlock.txt.bz2.gz;Aritmetic;autoC;1.017841;0.154377
-
-
-Grimm.txt.lzma;Aritmetic;monobit;0.959657;0.327273
-
-
-Grimm.txt.lzma;Aritmetic;poker;21.242224;0.129267
-
-
-Grimm.txt.lzma;Aritmetic;run;26.570869;0.432096
-
-
-Grimm.txt.lzma;Aritmetic;autoC;-1.232169;0.891057
-
-
-Montecristo.txt.bz2.lzma;Aritmetic;monobit;0.142072;0.706230
-
-
-Montecristo.txt.bz2.lzma;Aritmetic;poker;6.821582;0.962413
-
-
-Montecristo.txt.bz2.lzma;Aritmetic;run;38.773967;0.190645
-
-
-Montecristo.txt.bz2.lzma;Aritmetic;autoC;-1.267455;0.897504
-
-
-Miserables.txt.lzma;Aritmetic;monobit;0.087041;0.767973
-
-
-Miserables.txt.lzma;Aritmetic;poker;5.887089;0.981583
-
-
-Miserables.txt.lzma;Aritmetic;run;42.041635;0.110255
-
-
-Miserables.txt.lzma;Aritmetic;autoC;-1.491121;0.932035
-
-
-Leviatan.txt.gz;Aritmetic;monobit;2.681506;0.101520
-
-
-Leviatan.txt.gz;Aritmetic;poker;18.899590;0.218320
-
-
-Leviatan.txt.gz;Aritmetic;run;18.088525;0.957083
-
-
-Leviatan.txt.gz;Aritmetic;autoC;-0.845370;0.801048
-
-
-Ulysses.txt.gz.lzma;Aritmetic;monobit;0.617852;0.431847
-
-
-Ulysses.txt.gz.lzma;Aritmetic;poker;14.521552;0.486397
-
-
-Ulysses.txt.gz.lzma;Aritmetic;run;29.618897;0.587601
-
-
-Ulysses.txt.gz.lzma;Aritmetic;autoC;0.412987;0.339808
-
-
-Grimm.txt;Aritmetic;monobit;0.256536;0.612510
-
-
-Grimm.txt;Aritmetic;poker;12.505351;0.640445
-
-
-Grimm.txt;Aritmetic;run;28.042919;0.462175
-
-
-Grimm.txt;Aritmetic;autoC;-0.070952;0.528282
-
-
-Miserables.txt.bz2.lzma;Aritmetic;monobit;0.871122;0.350645
-
-
-Miserables.txt.bz2.lzma;Aritmetic;poker;21.709471;0.115651
-
-
-Miserables.txt.bz2.lzma;Aritmetic;run;35.280718;0.315746
-
-
-Miserables.txt.bz2.lzma;Aritmetic;autoC;1.490455;0.068052
-
-
-Miserables.txt.gz;Aritmetic;monobit;0.073274;0.786629
-
-
-Miserables.txt.gz;Aritmetic;poker;6.821582;0.962413
-
-
-Miserables.txt.gz;Aritmetic;run;27.977637;0.670466
-
-
-Miserables.txt.gz;Aritmetic;autoC;0.128783;0.448765
-
-
-Grimm.txt.gz.lzma;Aritmetic;monobit;1.677354;0.195276
-
-
-Grimm.txt.gz.lzma;Aritmetic;poker;10.693969;0.773971
-
-
-Grimm.txt.gz.lzma;Aritmetic;run;24.975463;0.629171
-
-
-Grimm.txt.gz.lzma;Aritmetic;autoC;-1.634949;0.948970
-
-
-Grimm.txt.bz2.lzma;Aritmetic;monobit;0.049506;0.823925
-
-
-Grimm.txt.bz2.lzma;Aritmetic;poker;13.094209;0.595021
-
-
-Grimm.txt.bz2.lzma;Aritmetic;run;19.338826;0.821810
-
-
-Grimm.txt.bz2.lzma;Aritmetic;autoC;-0.031521;0.512573
-
-
-Leviatan.txt.bz2.gz;LZW;monobit;43157.936694;0.000000
-
-
-Leviatan.txt.bz2.gz;LZW;poker;8695.594503;0.000000
-
-
-Leviatan.txt.bz2.gz;LZW;run;695586.673531;0.000000
-
-
-Leviatan.txt.bz2.gz;LZW;autoC;5.248125;0.000000
-
-
-Miserables.txt.gz.lzma;LZW;monobit;181219.247997;0.000000
-
-
-Miserables.txt.gz.lzma;LZW;poker;8475.322875;0.000000
-
-
-Miserables.txt.gz.lzma;LZW;run;3122914.909322;0.000000
-
-
-Miserables.txt.gz.lzma;LZW;autoC;-0.103023;0.541028
-
-
-Sherlock.txt.bz2.gz.lzma;LZW;monobit;23910.419021;0.000000
-
-
-Sherlock.txt.bz2.gz.lzma;LZW;poker;8367.344076;0.000000
-
-
-Sherlock.txt.bz2.gz.lzma;LZW;run;392791.280520;0.000000
-
-
-Sherlock.txt.bz2.gz.lzma;LZW;autoC;-0.680877;0.752025
-
-
-Leviatan.txt.bz2;LZW;monobit;43202.281138;0.000000
-
-
-Leviatan.txt.bz2;LZW;poker;8748.482992;0.000000
-
-
-Leviatan.txt.bz2;LZW;run;700742.014870;0.000000
-
-
-Leviatan.txt.bz2;LZW;autoC;4.973460;0.000000
-
-
-Montecristo.txt;LZW;monobit;1151.439898;0.000000
-
-
-Montecristo.txt;LZW;poker;2105.969107;0.000000
-
-
-Montecristo.txt;LZW;run;12062.267029;0.000000
-
-
-Montecristo.txt;LZW;autoC;-2.387833;0.991526
-
-
-Montecristo.txt.bz2.gz.lzma;LZW;monobit;101107.089882;0.000000
-
-
-Montecristo.txt.bz2.gz.lzma;LZW;poker;8076.812622;0.000000
-
-
-Montecristo.txt.bz2.gz.lzma;LZW;run;1762266.161972;0.000000
-
-
-Montecristo.txt.bz2.gz.lzma;LZW;autoC;0.570283;0.284243
-
-
-Ulysses.txt.gz;LZW;monobit;94328.238979;0.000000
-
-
-Ulysses.txt.gz;LZW;poker;7217.443480;0.000000
-
-
-Ulysses.txt.gz;LZW;run;1636076.990998;0.000000
-
-
-Ulysses.txt.gz;LZW;autoC;-4.049464;0.999974
-
-
-Sherlock.txt.gz;LZW;monobit;31793.476995;0.000000
-
-
-Sherlock.txt.gz;LZW;poker;7032.413776;0.000000
-
-
-Sherlock.txt.gz;LZW;run;544197.259224;0.000000
-
-
-Sherlock.txt.gz;LZW;autoC;-0.321044;0.625912
-
-
-Sherlock.txt;LZW;monobit;623.516133;0.000000
-
-
-Sherlock.txt;LZW;poker;2206.049516;0.000000
-
-
-Sherlock.txt;LZW;run;1753.994757;0.000000
-
-
-Sherlock.txt;LZW;autoC;-3.038170;0.998810
-
-
-Montecristo.txt.lzma;LZW;monobit;108161.925057;0.000000
-
-
-Montecristo.txt.lzma;LZW;poker;8345.965938;0.000000
-
-
-Montecristo.txt.lzma;LZW;run;1864228.117270;0.000000
-
-
-Montecristo.txt.lzma;LZW;autoC;-0.202181;0.580112
-
-HTML FILES
-
-Sherlock.htm;Huffman;monobit;2950.111068;0.000000
-
-
-Sherlock.htm;Huffman;poker;382.519954;0.000000
-
-
-Sherlock.htm;Huffman;run;22456.717284;0.000000
-
-
-Sherlock.htm;Huffman;autoC;-6.524451;1.000000
-
-
-Montecristo.htm;Huffman;monobit;8867.116702;0.000000
-
-
-Montecristo.htm;Huffman;poker;121.757876;0.000000
-
-
-Montecristo.htm;Huffman;run;415564.813630;0.000000
-
-
-Montecristo.htm;Huffman;autoC;-7.382723;1.000000
-
-
-Grimm.htm;Huffman;monobit;954.803879;0.000000
-
-
-Grimm.htm;Huffman;poker;101.659866;0.000000
-
-
-Grimm.htm;Huffman;run;17228.257469;0.000000
-
-
-Grimm.htm;Huffman;autoC;-2.586277;0.995149
-
-
-Leviathan.htm;Huffman;monobit;6725.218873;0.000000
-
-
-Leviathan.htm;Huffman;poker;219.745276;0.000000
-
-
-Leviathan.htm;Huffman;run;85145.945210;0.000000
-
-
-Leviathan.htm;Huffman;autoC;-8.151584;1.000000
-
-
-Miserables.htm;Huffman;monobit;19874.620729;0.000000
-
-
-Miserables.htm;Huffman;poker;844.716576;0.000000
-
-
-Miserables.htm;Huffman;run;199304.208962;0.000000
-
-
-Miserables.htm;Huffman;autoC;-18.998894;1.000000
-
-
-Sherlock.htm;bzip2;monobit;62.633172;0.000000
-
-
-Sherlock.htm;bzip2;poker;376.765778;0.000000
-
-
-Sherlock.htm;bzip2;run;558.144766;0.000000
-
-
-Sherlock.htm;bzip2;autoC;-1.737859;0.958882
-
-
-Montecristo.htm;bzip2;monobit;10.443319;0.001231
-
-
-Montecristo.htm;bzip2;poker;575.793682;0.000000
-
-
-Montecristo.htm;bzip2;run;4247.871733;0.000000
-
-
-Montecristo.htm;bzip2;autoC;-1.712787;0.956624
-
-
-Grimm.htm;bzip2;monobit;15.763785;0.000072
-
-
-Grimm.htm;bzip2;poker;226.830784;0.000000
-
-
-Grimm.htm;bzip2;run;431.739991;0.000000
-
-
-Grimm.htm;bzip2;autoC;-1.521351;0.935914
-
-
-Leviathan.htm;bzip2;monobit;110.411232;0.000000
-
-
-Leviathan.htm;bzip2;poker;446.334336;0.000000
-
-
-Leviathan.htm;bzip2;run;1787.881336;0.000000
-
-
-Leviathan.htm;bzip2;autoC;-1.657370;0.951278
-
-
-Miserables.htm;bzip2;monobit;184.028535;0.000000
-
-
-Miserables.htm;bzip2;poker;541.927895;0.000000
-
-
-Miserables.htm;bzip2;run;3350.094115;0.000000
-
-
-Miserables.htm;bzip2;autoC;-2.702909;0.996563
-
-Sherlock.htm;gzip;monobit;135.492831;0.000000
-
-
-Sherlock.htm;gzip;poker;794.874791;0.000000
-
-
-Sherlock.htm;gzip;run;178.094290;0.000000
-
-
-Sherlock.htm;gzip;autoC;-2.109650;0.982556
-
-
-Montecristo.htm;gzip;monobit;13.927962;0.000190
-
-
-Montecristo.htm;gzip;poker;22.631163;0.092291
-
-
-Montecristo.htm;gzip;run;846.356199;0.000000
-
-
-Montecristo.htm;gzip;autoC;-0.571894;0.716303
-
-
-Grimm.htm;gzip;monobit;0.031923;0.858196
-
-
-Grimm.htm;gzip;poker;44.892589;0.000080
-
-
-Grimm.htm;gzip;run;184.264322;0.000000
-
-
-Grimm.htm;gzip;autoC;1.155383;0.123967
-
-
-Leviathan.htm;gzip;monobit;0.650194;0.420043
-
-
-Leviathan.htm;gzip;poker;18.905991;0.218026
-
-
-Leviathan.htm;gzip;run;480.742284;0.000000
-
-
-Leviathan.htm;gzip;autoC;-0.609765;0.728991
-
-
-Miserables.htm;gzip;monobit;22.876716;0.000002
-
-
-Miserables.htm;gzip;poker;91.137214;0.000000
-
-
-Miserables.htm;gzip;run;1316.720764;0.000000
-
-
-Miserables.htm;gzip;autoC;-2.481589;0.993460
-
-
-Sherlock.htm;lzma;monobit;1.987456;0.158607
-
-
-Sherlock.htm;lzma;poker;7.743274;0.933662
-
-
-Sherlock.htm;lzma;run;41.004692;0.053653
-
-
-Sherlock.htm;lzma;autoC;0.129353;0.448539
-
-
-Montecristo.htm;lzma;monobit;0.512070;0.474244
-
-
-Montecristo.htm;lzma;poker;8.530553;0.900758
-
-
-Montecristo.htm;lzma;run;31.338337;0.499875
-
-
-Montecristo.htm;lzma;autoC;0.221873;0.412206
-
-
-Sherlock.htm.gz;lzma;monobit;0.748111;0.387075
-
-
-Sherlock.htm.gz;lzma;poker;19.334834;0.198960
-
-
-Sherlock.htm.gz;lzma;run;29.187255;0.403076
-
-
-Sherlock.htm.gz;lzma;autoC;-1.321109;0.906767
-
-
-Miserables.htm.gz;lzma;monobit;0.031704;0.858678
-
-
-Miserables.htm.gz;lzma;poker;27.898890;0.022211
-
-
-Miserables.htm.gz;lzma;run;35.729101;0.387112
-
-
-Miserables.htm.gz;lzma;autoC;-0.187683;0.574438
-
-
-Grimm.htm;lzma;monobit;0.185898;0.666353
-
-
-Grimm.htm;lzma;poker;27.758076;0.023133
-
-
-Grimm.htm;lzma;run;31.939216;0.276992
-
-
-Grimm.htm;lzma;autoC;0.612931;0.269961
-
-
-Grimm.htm.gz;lzma;monobit;0.121336;0.727590
-
-
-Grimm.htm.gz;lzma;poker;16.524953;0.348046
-
-
-Grimm.htm.gz;lzma;run;36.901960;0.121038
-
-
-Grimm.htm.gz;lzma;autoC;0.662805;0.253728
-
-
-Leviathan.htm.gz;lzma;monobit;2.784845;0.095160
-
-
-Leviathan.htm.gz;lzma;poker;15.206421;0.436653
-
-
-Leviathan.htm.gz;lzma;run;55.969055;0.002753
-
-
-Leviathan.htm.gz;lzma;autoC;-0.242358;0.595749
-
-
-Leviathan.htm;lzma;monobit;1.335316;0.247862
-
-
-Leviathan.htm;lzma;poker;15.155216;0.440296
-
-
-Leviathan.htm;lzma;run;54.161350;0.004411
-
-
-Leviathan.htm;lzma;autoC;-0.798824;0.787804
-
-
-Miserables.htm;lzma;monobit;0.054880;0.814780
-
-
-Miserables.htm;lzma;poker;13.126213;0.592550
-
-
-Miserables.htm;lzma;run;34.074994;0.368063
-
-
-Miserables.htm;lzma;autoC;0.068699;0.472614
-
-
-Montecristo.htm.gz;lzma;monobit;0.218936;0.639852
-
-
-Montecristo.htm.gz;lzma;poker;25.377038;0.045103
-
-
-Montecristo.htm.gz;lzma;run;21.752521;0.913850
-
-
-Montecristo.htm.gz;lzma;autoC;0.984412;0.162456
-
-
-Sherlock.htm;Aritmetic;monobit;0.021611;0.883127
-
-
-Sherlock.htm;Aritmetic;poker;17.440244;0.293235
-
-
-Sherlock.htm;Aritmetic;run;30.768696;0.426841
-
-
-Sherlock.htm;Aritmetic;autoC;-0.419667;0.662636
-
-
-Montecristo.htm.lzma;Aritmetic;monobit;0.001448;0.969645
-
-
-Montecristo.htm.lzma;Aritmetic;poker;16.544154;0.346836
-
-
-Montecristo.htm.lzma;Aritmetic;run;31.661965;0.483599
-
-
-Montecristo.htm.lzma;Aritmetic;autoC;-1.756065;0.960461
-
-
-Montecristo.htm;Aritmetic;monobit;7.220108;0.007209
-
-
-Montecristo.htm;Aritmetic;poker;6.808781;0.962740
-
-
-Montecristo.htm;Aritmetic;run;68.850379;0.000374
-
-
-Montecristo.htm;Aritmetic;autoC;0.550168;0.291102
-
-
-Sherlock.htm.gz;Aritmetic;monobit;0.025264;0.873712
-
-
-Sherlock.htm.gz;Aritmetic;poker;11.231623;0.736009
-
-
-Sherlock.htm.gz;Aritmetic;run;35.289864;0.161586
-
-
-Sherlock.htm.gz;Aritmetic;autoC;-0.716844;0.763265
-
-
-Miserables.htm.gz;Aritmetic;monobit;0.042879;0.835954
-
-
-Miserables.htm.gz;Aritmetic;poker;12.614161;0.632072
-
-
-Miserables.htm.gz;Aritmetic;run;26.781067;0.728075
-
-
-Miserables.htm.gz;Aritmetic;autoC;-1.216694;0.888140
-
-
-Sherlock.htm.lzma;Aritmetic;monobit;0.048836;0.825102
-
-
-Sherlock.htm.lzma;Aritmetic;poker;15.616062;0.408017
-
-
-Sherlock.htm.lzma;Aritmetic;run;38.043748;0.097574
-
-
-Sherlock.htm.lzma;Aritmetic;autoC;-2.908202;0.998182
-
-
-Grimm.htm.gz.lzma;Aritmetic;monobit;0.129009;0.719462
-
-
-Grimm.htm.gz.lzma;Aritmetic;poker;9.407441;0.855269
-
-
-Grimm.htm.gz.lzma;Aritmetic;run;26.700543;0.534595
-
-
-Grimm.htm.gz.lzma;Aritmetic;autoC;1.964930;0.024711
-
-
-Miserables.htm.lzma;Aritmetic;monobit;0.227862;0.633114
-
-
-Miserables.htm.lzma;Aritmetic;poker;5.272627;0.989556
-
-
-Miserables.htm.lzma;Aritmetic;run;45.696452;0.055259
-
-
-Miserables.htm.lzma;Aritmetic;autoC;-0.236275;0.593391
-
-
-Grimm.htm.lzma;Aritmetic;monobit;0.107216;0.743336
-
-
-Grimm.htm.lzma;Aritmetic;poker;21.191019;0.130836
-
-
-Grimm.htm.lzma;Aritmetic;run;19.835712;0.870379
-
-
-Grimm.htm.lzma;Aritmetic;autoC;0.908800;0.181728
-
-
-Grimm.htm;Aritmetic;monobit;0.053330;0.817367
-
-
-Grimm.htm;Aritmetic;poker;13.427043;0.569350
-
-
-Grimm.htm;Aritmetic;run;28.407932;0.548829
-
-
-Grimm.htm;Aritmetic;autoC;0.765253;0.222060
-
-
-Sherlock.htm.gz.lzma;Aritmetic;monobit;2.145688;0.142971
-
-
-Sherlock.htm.gz.lzma;Aritmetic;poker;19.475648;0.192983
-
-
-Sherlock.htm.gz.lzma;Aritmetic;run;26.264579;0.558504
-
-
-Sherlock.htm.gz.lzma;Aritmetic;autoC;0.649684;0.257948
-
-
-Grimm.htm.gz;Aritmetic;monobit;0.552464;0.457312
-
-
-Grimm.htm.gz;Aritmetic;poker;9.906691;0.825568
-
-
-Grimm.htm.gz;Aritmetic;run;28.178310;0.455029
-
-
-Grimm.htm.gz;Aritmetic;autoC;1.311280;0.094882
-
-
-Montecristo.htm.gz.lzma;Aritmetic;monobit;0.074154;0.785382
-
-
-Montecristo.htm.gz.lzma;Aritmetic;poker;26.074708;0.037245
-
-
-Montecristo.htm.gz.lzma;Aritmetic;run;38.721084;0.192230
-
-
-Montecristo.htm.gz.lzma;Aritmetic;autoC;1.917655;0.027577
-
-
-Leviathan.htm.gz;Aritmetic;monobit;1.191654;0.274996
-
-
-Leviathan.htm.gz;Aritmetic;poker;15.923292;0.387168
-
-
-Leviathan.htm.gz;Aritmetic;run;36.011851;0.207690
-
-
-Leviathan.htm.gz;Aritmetic;autoC;0.136416;0.445746
-
-
-Leviathan.htm.lzma;Aritmetic;monobit;1.051138;0.305245
-
-
-Leviathan.htm.lzma;Aritmetic;poker;16.288129;0.363165
-
-
-Leviathan.htm.lzma;Aritmetic;run;30.178002;0.456565
-
-
-Leviathan.htm.lzma;Aritmetic;autoC;0.436952;0.331073
-
-
-Leviathan.htm;Aritmetic;monobit;0.074443;0.784974
-
-
-Leviathan.htm;Aritmetic;poker;10.809181;0.766000
-
-
-Leviathan.htm;Aritmetic;run;44.211028;0.073862
-
-
-Leviathan.htm;Aritmetic;autoC;-0.257068;0.601437
-
-
-Miserables.htm;Aritmetic;monobit;0.002500;0.960120
-
-
-Miserables.htm;Aritmetic;poker;29.524653;0.013756
-
-
-Miserables.htm;Aritmetic;run;45.288789;0.093365
-
-
-Miserables.htm;Aritmetic;autoC;1.683866;0.046104
-
-
-Montecristo.htm.gz;Aritmetic;monobit;0.445217;0.504615
-
-
-Montecristo.htm.gz;Aritmetic;poker;10.623562;0.778794
-
-
-Montecristo.htm.gz;Aritmetic;run;42.059041;0.109913
-
-
-Montecristo.htm.gz;Aritmetic;autoC;0.098827;0.460638
-
-
-Miserables.htm.gz.lzma;Aritmetic;monobit;0.031361;0.859436
-
-
-Miserables.htm.gz.lzma;Aritmetic;poker;14.233523;0.507897
-
-
-Miserables.htm.gz.lzma;Aritmetic;run;29.409164;0.692187
-
-
-Miserables.htm.gz.lzma;Aritmetic;autoC;-1.379071;0.916064
-
-
-Leviathan.htm.gz.lzma;Aritmetic;monobit;0.011668;0.913981
-
-
-Leviathan.htm.gz.lzma;Aritmetic;poker;11.846085;0.690640
-
-
-Leviathan.htm.gz.lzma;Aritmetic;run;29.711146;0.480516
-
-
-Leviathan.htm.gz.lzma;Aritmetic;autoC;-0.147058;0.558457
+Grimm.txt;lzma 8;autoC;0.214657;0.415017
 
