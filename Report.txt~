@@ -1,3 +1,35 @@
 file;Algorithm;Test;Statistic;p-value
 Grimm.txt;Huffman;MatrixRank;0.832015;0.202700
 
+Grimm.txt;lzma 1;NOTemplateMatching;5992.000000;0.404150
+
+
+Grimm.txt;lzma 1;NOTemplateMatching;5992.000000;0.404150
+
+
+Grimm.txt;lzma 1;OTemplateMatching;6.776500;0.560928
+
+
+Grimm.txt;lzma 1;Universal
+Grimm.txt;lzma 1;Universal-0.668488;0.748089
+
+
+Grimm.txt;lzma;Universal
+Grimm.txt;lzma;Universal0.114168;0.454552
+
+
+Grimm.txt;lzma;LinearComplexity-1.000000;-1.000000
+
+
+Grimm.txt;lzma;LinearComplexity
+Grimm.txt;lzma;LinearComplexity-1.000000;-1.000000
+
+
+Grimm.txt;lzma;LinearComplexity-1.000000;-1.000000
+
+
+Grimm.txt;lzma;LinearComplexity0.736655;0.230666
+
+
+Grimm.txt;Huffman;LinearComplexity0.697708;0.242680
+

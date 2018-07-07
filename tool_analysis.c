@@ -24,6 +24,8 @@
 #include "smultin.h"
 #include "gofs.h"
 #include "sspectral.h"
+#include "scomp.h"
+#include "sentrop.h"
 #include <math.h>
 
 static void ShowUsage(char *progPath);
@@ -384,18 +386,88 @@ int main(int argc, char *argv[]){
                                         fprintf(report,"%lf;%lf\n\n",res->Bas->sVal2[gofw_Mean],res->Bas->pVal2[gofw_Mean]);
                                     }
                                     else{
-                                       if(strcmp(argv[4],"NOTemplateMatching") == 0){
-                                           fflush(report);
-                                           fprintf(report, "NOTemplateMatching;");
-                                           sres_Poisson * res = sres_CreatePoisson(); 
-                                           unsigned long key = 1;
-                                           smarsa_CATBits(gen,res,1,y,0,32,5,key);
-                                           printf("STATISTIC VALUE %lf \n", res->sVal2);
-                                           printf("P VALUE %lf \n", res->pVal2);
-                                           fflush(report);
-                                           fprintf(report,"%lf;%lf\n\n",res->sVal2,res->pVal2);
-                                       }
-                                       else ShowUsage(argv[0]); 
+                                        if(strcmp(argv[4],"NotOverlappingTemplateMatching") == 0){
+                                            fflush(report);
+                                            fprintf(report, "NOTemplateMatching;");
+                                            sres_Poisson * res = sres_CreatePoisson(); 
+                                            unsigned long key = 1;
+                                            smarsa_CATBits(gen,res,1,y,0,32,5,key);
+                                            printf("STATISTIC VALUE %lf \n", res->sVal2);
+                                            printf("P VALUE %lf \n", res->pVal2);
+                                            fflush(report);
+                                            fprintf(report,"%lf;%lf\n\n",res->sVal2,res->pVal2);
+                                        }
+                                        else{
+                                            if(strcmp(argv[4],"OverlappingTemplateMatching") == 0){
+                                                fflush(report);
+                                                fprintf(report, "OTemplateMatching;");
+                                                smultin_Res* res = smultin_CreateRes(NULL);
+                                                smultin_MultinomialBitsOver(gen,NULL,res,1,y,0,32,4,FALSE);
+                                                printf("STATISTIC VALUE %lf \n", res->sVal2[1][gofw_Mean]);
+                                                printf("P VALUE %lf \n", res->pVal2[1][gofw_Mean]);
+                                                fflush(report);
+                                                fprintf(report,"%lf;%lf\n\n",res->sVal2[1][gofw_Mean],res->pVal2[1][gofw_Mean]);
+                                            }
+                                            else{
+                                                if(strcmp(argv[4],"Universal") == 0){
+                                                    fflush(report);
+                                                    fprintf(report, "Universal");
+                                                    sres_Basic * res = sres_CreateBasic();
+                                                    long Q = 640;
+                                                    long K = 6400;
+                                                    svaria_AppearanceSpacings(gen,res,1,Q,K,0,30,6);
+                                                    printf("STATISTIC VALUE %lf \n", res->sVal2[gofw_Mean] );
+                                                    printf("P VALUE %lf \n", res->pVal2[gofw_Mean] );
+                                                    fflush(report);
+                                                    fprintf(report,"%lf;%lf\n\n",res->sVal2[gofw_Mean],res->pVal2[gofw_Mean]);
+                                                }
+                                                else{
+                                                    if(strcmp(argv[4],"LinearComplexity") == 0){
+                                                        fflush(report);
+                                                        fprintf(report, "LinearComplexity");
+                                                        scomp_Res * res = scomp_CreateRes();
+                                                        scomp_LinearComp(gen,res,1,y,0,32);
+                                                        printf("STATISTIC VALUE %lf \n", res->JumpNum->sVal2[gofw_Mean] );
+                                                        printf("P VALUE %lf \n", res->JumpNum->pVal2[gofw_Mean] );
+                                                        fflush(report);
+                                                        fprintf(report,"%lf;%lf\n\n",res->JumpNum->sVal2[gofw_Mean],res->JumpNum->pVal2[gofw_Mean]);
+                                                    }
+                                                    else{
+                                                        if(strcmp(argv[4],"Serial") == 0){
+                                                            fflush(report);
+                                                            fprintf(report, "Serial;");
+                                                            smultin_Res* res = smultin_CreateRes(NULL);
+                                                            double * deltas = (double*)malloc(sizeof(double)*2);
+                                                            deltas[0] = deltas[1] = 1; 
+                                                            smultin_Param * param = smultin_CreateParam(2,deltas,smultin_GenerCellSerial,-1);
+                                                            smultin_MultinomialBitsOver(gen,param,res,1,y,0,32,4,FALSE);
+                                                            printf("STATISTIC VALUE %lf \n", res->sVal2[1][gofw_Mean]);
+                                                            printf("P VALUE %lf \n", res->pVal2[1][gofw_Mean]);
+                                                            fflush(report);
+                                                            fprintf(report,"%lf;%lf\n\n",res->sVal2[1][gofw_Mean],res->pVal2[1][gofw_Mean]);
+                                                        }
+                                                        else{
+                                                            if(strcmp(argv[4],"ApproximateEntropy") == 0){
+                                                                fflush(report);
+                                                                fprintf(report, "ApproximateEntropy;");
+                                                                smultin_Res* res = smultin_CreateRes(NULL);
+                                                                double * deltas = (double*)malloc(sizeof(double)*2);
+                                                                deltas[0] = deltas[1] = 0; 
+                                                                smultin_Param * param = smultin_CreateParam(2,deltas,smultin_GenerCellSerial,-1);
+                                                                int L = my_log2(((double)y)) - 10;
+                                                                printf("L: %d\n Log: %d",L, my_log2(((double)y)) );
+                                                                smultin_MultinomialBitsOver(gen,param,res,1,y,0,32,L,FALSE);
+                                                                printf("STATISTIC VALUE %lf \n", res->sVal2[1][gofw_Mean]);
+                                                                printf("P VALUE %lf \n", res->pVal2[1][gofw_Mean]);
+                                                                fflush(report);
+                                                                fprintf(report,"%lf;%lf\n\n",res->sVal2[1][gofw_Mean],res->pVal2[1][gofw_Mean]);
+                                                                }
+                                                            else ShowUsage(argv[0]);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        } 
                                     }
                                 } 
                             }
@@ -432,7 +504,11 @@ static void ShowUsage(char *progPath)
     printf("   <-c> <alg> <-s> <autoC> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <Matrix> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
     printf("   <-c> <alg> <-s> <Fourier> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
-    printf("   <-c> <alg> <-s> <NOTemplateMatching> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <NotOverlappingTemplateMatching> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <OverlappingTemplateMatching> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <Universal> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <LinearComplexity> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
+    printf("   <-c> <alg> <-s> <ApproximateEntropy> <-vel*> <path_file>: Execute auto correlation test on a compression algorithm.\n");
     printf("   acceptable algorithms:\n\n    Huffman\n\n    LZW\n\n    Aritmetic\n\n    bzip2\n\n    gzip\n\n    lzma\n\n");
     printf("   <-vel> parameter is optional and it can assume values:\n\n in range [1,9] if the compressione algorithm is bzip2,gzip,lzma.\n 9 or 15 if the compression algorithm is LZW\n\n");
     printf("   <-f> <pathfile> and same parameters above to test directly a file");
